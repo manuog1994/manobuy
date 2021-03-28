@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyToAnnouncements extends Migration
+class AddDetailsToAnnouncements extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddForeignKeyToAnnouncements extends Migration
     public function up()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('category_id')->constrained();
+            $table->string('img')->default('https://via.placeholder.com/286');
+            $table->date('date');
         });
     }
 
@@ -27,11 +27,7 @@ class AddForeignKeyToAnnouncements extends Migration
     public function down()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropColumn(['user_id']);
-            $table->dropForeign(['category_id']);
-            $table->dropColumn(['category_id']);
-
+            //
         });
     }
 }

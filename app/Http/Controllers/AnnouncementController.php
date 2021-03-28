@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Announcement;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -13,23 +15,38 @@ class AnnouncementController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'category' => 'required',
+            'img' => 'nullable',
+            'category_id' => 'required',
         ]);
-        dd($request);
-        Announcement::create($request);
+        //dd($request);
+        $user = Auth::user();
+        
+        $category = Announcement::create([
+            'name' => $request['name'],
+            'description' => $request['description'],
+            'price' => $request['price'],
+            'category_id' => $request['category_id'],
+            'img' => $request['img'], 
+            'user_id' => Auth::id()
+        ]);    
 
-        return redirect('create')->with('created', 'Su anuncio a sido creado');
+            return redirect('/')->with('created', 'Su anuncio a sido creado con éxito');
     }
 
-    public function view()
+     public function viewAnnouncement($id)
     {
-        return view('/announcement');
+        $category = Category::findOrFail($id);
+        $announcements = $category->announcements()->paginate(10);
+        return view('/announcement', compact('category', 'announcements'));
     }
-    public function viewAnnouncement($id)
-    {
-        $announcement = Announcement::findOrFail($id);
 
-        return view('/announcement', ["announcement"=>$announcement]);
+    public function viewDetail($id)
+    {
+        $detail = Announcement::findOrFail($id);
+
+        return view('/detail', ["detail"=>$detail]);
     }
+
+
     
 }

@@ -9,16 +9,8 @@
 </head>
 <body>
 @include('layouts._nav')
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-    <div class="container-fluid">
+@include('layouts._validation')
+    <div class="container-fluid" style="min-height: 80vh;">
         @yield('content')
     </div>
 @include('layouts._footer')

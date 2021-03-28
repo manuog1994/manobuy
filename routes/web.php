@@ -19,7 +19,9 @@ use App\Http\Controllers\AnnouncementController;
     return view('welcome');
 }); */
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/all', [AnnouncementController::class, 'view'])->name('announcements');
+Route::get('/announcements', [AnnouncementController::class, 'view'])->name('announcements');
+Route::get('/announcements/{id}', [AnnouncementController::class, 'viewAnnouncement'])->name('announcements.category');
+Route::get('/announcements/detail/{id}', [AnnouncementController::class, 'viewDetail'])->name('announcements.detail');
 Route::post('/', [AnnouncementController::class, 'create'])->name('create');
 Route::put('/', [AnnouncementController::class, 'update'])->name('update');
 Route::delete('/', [AnnouncementController::class, 'delete'])->name('delete');
