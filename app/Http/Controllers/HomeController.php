@@ -13,4 +13,10 @@ class HomeController extends Controller
         $announcements = Announcement::where('is_accepted', true)->get();
         return view('home', compact('announcements'));
     }
+
+    public function locale($locale)
+    {
+        session()->put('locale', $locale);
+        return back();
+    }
 }

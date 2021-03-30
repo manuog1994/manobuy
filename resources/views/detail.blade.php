@@ -66,12 +66,9 @@
           </div>
           <p class="mt-3 me-5 text-end">Precio: <strong>{{$announcement->price}}&euro;</p></strong>
           <div class="d-flex justify-content-around border-top pt-2">
-            <p class="text-muted">Categoria: @foreach ($categories as $category)
-              @if ($announcement->category_id == $category->id)
-              {{$category->name}}
-              @endif
-              @endforeach</p>
-              <p>{{$announcement->created_at}}</p>
+            <p class="text-muted">Categoria: 
+              {{$announcement->category->name}}</p>
+              <p>{{$announcement->created_at->format('d/m/Y')}}</p>
         </div>
         </div>
 </div>

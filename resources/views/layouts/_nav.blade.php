@@ -29,10 +29,15 @@
                         @endforeach
                     </ul>
                 </li>
+                {{-- Accordion Menú --}}
+                @include('layouts.nav._nav_accordion')
             </ul>
-            <li class="my-li">
-                <hr class="d-lg-none dropdown-divider">
-            </li>
+            {{-- Flags bottons --}} 
+            <ul class="navbar-nav ms-auto">
+                    @include('layouts.nav._flags_bottons', ['lang'=>'es', 'nation'=>'es'])
+                    @include('layouts.nav._flags_bottons', ['lang'=>'en', 'nation'=>'gb'])
+                    @include('layouts.nav._flags_bottons', ['lang'=>'it', 'nation'=>'it'])
+            </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @auth
                 <li class="nav-item dropdown my-li d-sm-flex align-self-sm-center">
@@ -82,5 +87,5 @@
         </div>
     </div>
 </nav>
-@include('layouts._modals')
-@include('layouts._modalanunn')
+@include('layouts.nav._modals')
+@include('layouts.nav._modalanunn')
