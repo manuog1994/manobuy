@@ -13,4 +13,7 @@
             @endforeach
         </ul>
     </div>
-    @endif
+@endif
+@if(session('error.revisor'))
+<div class="alert alert-danger">{{session('error.revisor')}}</div>
+@endif

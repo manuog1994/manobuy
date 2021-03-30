@@ -14,9 +14,8 @@ class AddDetailsToAnnouncements extends Migration
     public function up()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->string('img')->default('https://via.placeholder.com/286');
-            $table->date('date');
-        });
+            $table->string('img')->nullable();
+         });
     }
 
     /**
@@ -27,7 +26,7 @@ class AddDetailsToAnnouncements extends Migration
     public function down()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            //
+            $table->dropColumn('img');
         });
     }
 }

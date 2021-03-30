@@ -26,17 +26,19 @@ class AnnouncementController extends Controller
             'description' => $request['description'],
             'price' => $request['price'],
             'category_id' => $request['category_id'],
-            'img' => $request['img'], 
+            'img' => $request['img'] = null, 
             'user_id' => Auth::id()
         ]);    
 
-            return redirect('/')->with('created', 'Su anuncio a sido creado con éxito');
+            return redirect('/')->with('created', 'Su anuncio a sido creado con éxito, en unos minutos nuestros revisores aceptaran o rechazaran su anuncio');
     }
 
      public function viewAnnouncement($id)
     {
         $category = Category::findOrFail($id);
-        $announcements = $category->announcements()->paginate(10);
+        $announcements = $category->announcements()
+                                    ->where('is_accepted', true)
+                                    ->paginate(10);
         return view('/announcement', compact('category', 'announcements'));
     }
 

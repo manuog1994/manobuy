@@ -14,7 +14,7 @@ class AddImageToCategories extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->string('img');
+            $table->string('img')->nullable();
         });
     }
 

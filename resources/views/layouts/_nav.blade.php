@@ -7,15 +7,20 @@
             <span class="iconNav"><i class="bi bi-list"></i></span>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active my-link text-light" aria-current="page" href="{{route('home')}}"><i class="fas fa-home fa-2x"></i></a>
+                    <a class="nav-link active my-link text-light d-none d-lg-block" aria-current="page" href="{{route('home')}}"><i class="fas fa-home fa-2x"></i></a>
+                    <a class="nav-link active my-link d-lg-none" aria-current="page" href="{{route('home')}}">Inicio</a>
                 </li>
                 <!-- Navbar dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle my-link text-light ms-2" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle my-link text-light ms-2 d-none d-lg-block" href="#" id="navbarDropdown" role="button"
                         data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-list fa-2x"></i>
+                    </a>
+                    <a class="nav-link dropdown-toggle my-link ms-2 d-lg-none" href="#" id="navbarDropdown" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        Categorías
                     </a>
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -42,8 +47,16 @@
                         </form>
                     </ul>
                 </li>
+                @if (Auth::user()->is_revisor)
+                <li class="nav-item d-lg-flex">
+                    <a class="d-lg-none nav-link my-link" type="button" class="btn btn-primary" href="{{route('revisor.home')}}">Revisar Anuncios <span class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+                    </a>
+                    <a class="d-none d-lg-block btn btn-info btn-rounded me-2" type="button" class="btn btn-primary" href="{{route('revisor.home')}}">Revisar Anuncios <span class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+                    </a>
+                </li>
+                @endif
                 @endauth
-                <li class="nav-item">
+                <li class="nav-item d-lg-flex">
                     @guest
                     <a class="d-lg-none nav-link my-link" data-bs-toggle="modal" href="#modal" role="button">Regístrate
                         o

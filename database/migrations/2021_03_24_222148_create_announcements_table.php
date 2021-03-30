@@ -18,8 +18,7 @@ class CreateAnnouncementsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->float('price', 10, 2);
-            $table->string('category');
-            $table->timestamps();
+             $table->timestamps();
         });
     }
 

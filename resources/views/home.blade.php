@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('title', 'Vendelo en ManoBuy')
 @section('content')
-<header class="row bg-image d-flex align-items-center" style="background-image: url('/storage/images/hand-shake-on-yellow.jpg'); height: 40vh;">
+<header class="row bg-image d-flex align-items-center"
+    style="background-image: url('/storage/images/hand-shake-on-yellow.jpg'); height: 40vh;">
     <div class="col-12 text-center">
-        <h1 class="mt-2 text-light">Bienvenido, a <span class="iconNav"><i class="bi bi-megaphone p-1 rounded mt-5 ms-1 me-2 text-light"></i>Mano<span class="text-warning">Buy</span></span>
+        <h1 class="mt-2 text-light">Bienvenido, a <span class="iconNav"><i
+                    class="bi bi-megaphone p-1 rounded mt-5 ms-1 me-2 text-light"></i>Mano<span
+                    class="text-warning">Buy</span></span>
         </h1>
         <h2 class="mt-3 text-light">¿Qué estas buscando?</h2>
         <p class="text-light">Búscalo dentro de las categorías, ahí encontras el producto que desees y podrás ver los
@@ -17,16 +20,15 @@
         <div class="card image shadow">
             <img src="https://via.placeholder.com/286" class="card-img-top" width="100%" alt="...">
             <div class="card-body">
-                <div class="d-flex justify-content-between">
-                    <h5 class="card-title">{{$announcement->name}}</h5>
-                    <p class="text-muted">@foreach ($categories as $category)
-                        @if ($announcement->category_id == $category->id)
-                        {{$category->name}}
-                        @endif
-                        @endforeach</p>
-                </div>                <p class="card-text">{{substr($announcement->description, 0, 20)}}...</p>
+                <h5 class="card-title">{{$announcement->name}}</h5>
+                <p class="card-text">{{substr($announcement->description, 0, 20)}}...</p>
                 <p class="text-end">Precio: <strong>{{$announcement->price}}&euro;</strong></p>
                 <p class="my-small text-center text-muted">{{$announcement->created_at}}</p>
+                <p class="text-muted">@foreach ($categories as $category)
+                    @if ($announcement->category_id == $category->id)
+                    {{$category->name}}
+                    @endif
+                    @endforeach</p>
             </div>
             <div class="middle">
                 <a class="text-mycard" href="{{route('announcements.detail', $announcement->id)}}">Ir al anuncio</a>

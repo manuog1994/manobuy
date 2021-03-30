@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropDateToAnnouncements extends Migration
+class AddIsAcceptedToAnnouncementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class DropDateToAnnouncements extends Migration
     public function up()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropColumn('date');
+            $table->boolean('is_accepted')->nullable()->after('price');
         });
     }
 
@@ -26,7 +26,7 @@ class DropDateToAnnouncements extends Migration
     public function down()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->date('date');
+            $table->dropColumn('is_accepted');
         });
     }
 }
