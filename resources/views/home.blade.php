@@ -11,6 +11,7 @@
         <h2 class="mt-3 text-light">¿Qué estas buscando?</h2>
         <p class="text-light">Búscalo dentro de las categorías, ahí encontras el producto que desees y podrás ver los
             anuncios.</p>
+            <a href="#" id="testing">Click!</a>
     </div>
 </header>
 @include('home._last_announcements')

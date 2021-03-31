@@ -1,4 +1,4 @@
-<div class="row d-flex justify-content-center align-items-center mt-3 ms-auto me-auto" style="max-width: 70%;">
+<div class="row d-flex justify-content-center align-items-center mt-3 ms-auto me-auto" style="max-width: 90%;">
     <h2 class="text-center mb-3">Anuncios Recientes</h2>
     @foreach ($announcements->reverse()->take(5) as $announcement)
     <div class="col-12 col-lg-2 col-md-3 col-sm-4 m-2 d-flex justify-content-center my-cont">

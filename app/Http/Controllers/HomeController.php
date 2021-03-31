@@ -19,4 +19,17 @@ class HomeController extends Controller
         session()->put('locale', $locale);
         return back();
     }
+
+    public function uploadImages(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        session()->push("images.{uniqueSecret}", $fileName);
+
+        return response()->json(
+            session("images.{uniqueSecret}")
+        );
+    }
+
 }

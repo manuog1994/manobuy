@@ -1,4 +1,4 @@
-<div class="row rounded d-flex justify-content-around mt-3 mb-5 ms-auto me-auto" style="max-width: 60%;">
+<div class="row rounded d-flex justify-content-around mt-3 mb-5 ms-auto me-auto" style="max-width: 80%;">
     <h2 class="text-center mb-5">Categorías</h2>
     @foreach($categories as $category)
     <div class="col-sm-12 col-md-6 col-lg-3 div-img">

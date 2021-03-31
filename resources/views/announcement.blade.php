@@ -9,15 +9,13 @@ Todos los anuncios, de {{$category->name}}
 @section('content')
 <div class="row">
     <div class="col-12 text-center mt-5 mb-5">
-        <h1>Todos los anuncios de @if (URL::current() == route('announcements'))
-            los anuncios
-            @else
+        <h1>Todos los anuncios de 
             @foreach ($categories as $category)
             @if (Route::current()->id == $category->id)
             {{$category->name}}
             @endif
             @endforeach
-            @endif.</h1>
+            .</h1>
     </div>
 </div>
 @include('announcements._announcements_card')

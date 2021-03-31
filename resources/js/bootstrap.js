@@ -29,6 +29,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 require('bootstrap');
 require('@popperjs/core');
+require('./newAnnouncement')
+import Dropzone from 'dropzone';
 import * as mdb from 'mdb-ui-kit'; // lib
 import { Input } from 'mdb-ui-kit'; // module
+window.Dropzone = require('dropzone');
+Dropzone.autoDiscover = false;
 

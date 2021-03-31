@@ -1,5 +1,6 @@
-<form action="{{route('home')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('announcements.create')}}" method="POST" enctype="multipart/form-data">
     @csrf
+    <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
     <div class="mb-3">
         <label for="exampleInputName" class="form-label">Nombre del Producto</label>
         <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
@@ -35,15 +36,20 @@
         <div class="invalid-feedback">Por favor seleccione una categoría</div>
     </div>
     <div class="mb-3">
-      <label class="form-label" for="customFile">Selecciona las fotos</label>
-      <input type="file" class="form-control" id="customFile" name="img" value="https://via.placeholder.com/286">
-    </div>
-    <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
             aria-describedby="descriptionHelp">{{old('description')}}</textarea>
         @error('description')
         <small id="descriptionHelp" class="form-text" style="color:red;">
+            {{ $message }}
+        </small>
+        @enderror
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputImage" class="form-label">Arrastre sus imágenes</label>
+        <div class="dropzone" id="drophere"></div>
+        @error('image')
+        <small id="imageHelp" class="form-text" style="color:red;">
             {{ $message }}
         </small>
         @enderror

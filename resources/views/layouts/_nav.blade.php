@@ -72,12 +72,12 @@
                         inicia
                         sesión</a>
                     @endguest
-                    <a class="d-lg-none nav-link my-link" @if (!Auth::user()) href="#modal" data-bs-toggle="modal"
+                    <a id="dropActivation" class="d-lg-none nav-link my-link" @if (!Auth::user()) href="#modal" data-bs-toggle="modal"
                         role="button" @else type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#modalAnunn" @endif>Crear Anuncio</a>
-                    <a class="d-none d-lg-block btn btn-info btn-rounded" @if (!Auth::user()) href="#modal"
+                    <a id="dropActivacion" class="d-none d-lg-block btn btn-info btn-rounded" @if (!Auth::user()) href="#modal"
                         data-bs-toggle="modal" role="button" @else type="button" class="btn btn-primary"
-                        data-bs-toggle="modal" data-bs-target="#modalAnunn" @endif><i class="fas fa-plus me-1"></i> Crear Anuncio</a>
+                        data-bs-toggle="modal" data-bs-target="#modalAnunn" id="dropListen" @endif><i class="fas fa-plus me-1"></i> Crear Anuncio</a>
                 </li>
             </ul>
             <!--       <form class="d-flex">
@@ -87,5 +87,5 @@
         </div>
     </div>
 </nav>
-@include('layouts.nav._modals')
-@include('layouts.nav._modalanunn')
+@include('auth._modals')
+@include('announcements._modalanunn')

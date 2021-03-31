@@ -39,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
             }
             Paginator::useBootstrap();
 
+            $uniqueSecret = base_convert(sha1(uniqid(mt_rand())),16, 36);
+            View::share('uniqueSecret', $uniqueSecret);
     }
 }

@@ -28,7 +28,10 @@ class AnnouncementController extends Controller
             'category_id' => $request['category_id'],
             'img' => $request['img'] = null, 
             'user_id' => Auth::id()
-        ]);    
+        ]);   
+        
+        $uniqueSecret = $request->input('uniqueSecret');
+        dd($uniqueSecret);
 
             return redirect('/')->with('created', 'Su anuncio a sido creado con éxito, en unos minutos nuestros revisores aceptaran o rechazaran su anuncio');
     }
@@ -39,16 +42,16 @@ class AnnouncementController extends Controller
         $announcements = $category->announcements()
                                     ->where('is_accepted', true)
                                     ->paginate(10);
-        return view('/announcement', compact('category', 'announcements'));
+        return view('announcement', compact('category', 'announcements'));
     }
 
     public function viewDetail($id)
     {
         $detail = Announcement::findOrFail($id);
 
-        return view('/detail', ["detail"=>$detail]);
+        return view('announcements.detail', ["detail"=>$detail]);
     }
 
 
-    
+
 }
