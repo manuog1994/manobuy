@@ -2,17 +2,18 @@
 @foreach ($categories as $category)
 @if (Route::current()->id == $category->id)
 @section('title')
-Todos los anuncios, de {{$category->name}}
+{{__('ui.tab')}} {{$category->name}}
 @endsection
 @endif
 @endforeach
 @section('content')
+@include('announcements._selector')
 <div class="row">
     <div class="col-12 text-center mt-5 mb-5">
-        <h1>Todos los anuncios de 
+        <h1>{{__('ui.allAnnouncementCategory')}}
             @foreach ($categories as $category)
             @if (Route::current()->id == $category->id)
-            {{$category->name}}
+            {{__("ui.{$category->name}")}}
             @endif
             @endforeach
             .</h1>

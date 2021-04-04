@@ -9,75 +9,71 @@
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active my-link text-light d-none d-lg-block" aria-current="page" href="{{route('home')}}"><i class="fas fa-home fa-2x"></i></a>
-                    <a class="nav-link active my-link d-lg-none" aria-current="page" href="{{route('home')}}">Inicio</a>
+                    <a class="nav-link active my-link text-light d-none d-lg-block" aria-current="page"
+                        href="{{route('home')}}"><i class="fas fa-home fa-2x"></i></a>
+                    <a class="nav-link active my-link d-lg-none" aria-current="page" href="{{route('home')}}">{{__('ui.home')}}</a>
                 </li>
                 <!-- Navbar dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle my-link text-light ms-2 d-none d-lg-block" href="#" id="navbarDropdown" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle my-link text-light ms-2 d-none d-lg-block" href="#"
+                        id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-list fa-2x"></i>
-                    </a>
-                    <a class="nav-link dropdown-toggle my-link ms-2 d-lg-none" href="#" id="navbarDropdown" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                        Categorías
                     </a>
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                        <li><a class="dropdown-item" href="{{route('announcements.category', $category->id)}}">{{$category->name}}</a></li>
+                        <li><a class="dropdown-item"
+                                href="{{route('announcements.category', $category->id)}}">{{__("ui.{$category->name}")}}</a></li>
                         @endforeach
                     </ul>
                 </li>
                 {{-- Accordion Menú --}}
                 @include('layouts.nav._nav_accordion')
             </ul>
-            {{-- Flags bottons --}} 
+            {{-- Flags bottons --}}
             <ul class="navbar-nav ms-auto">
-                    @include('layouts.nav._flags_bottons', ['lang'=>'es', 'nation'=>'es'])
-                    @include('layouts.nav._flags_bottons', ['lang'=>'en', 'nation'=>'gb'])
-                    @include('layouts.nav._flags_bottons', ['lang'=>'it', 'nation'=>'it'])
+                @include('layouts.nav._flags_bottons', ['lang'=>'es', 'nation'=>'es'])
+                @include('layouts.nav._flags_bottons', ['lang'=>'en', 'nation'=>'gb'])
+                @include('layouts.nav._flags_bottons', ['lang'=>'it', 'nation'=>'it'])
             </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 @auth
                 <li class="nav-item dropdown my-li d-sm-flex align-self-sm-center">
                     <a class="nav-link dropdown-toggle my-link" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Hola, {{Auth::user()->name}}
+                        {{__('ui.salute')}}{{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <form action="{{route('logout')}}" method="POST">
                             @csrf
-                            <button class="dropdown-item" type="submit">Cerrar session</button>
+                            <button class="dropdown-item" type="submit">{{__('ui.logout')}}</button>
                         </form>
                     </ul>
                 </li>
                 @if (Auth::user()->is_revisor)
-                <li class="nav-item d-lg-flex">
-                    <a class="d-lg-none nav-link my-link" type="button" class="btn btn-primary" href="{{route('revisor.home')}}">Revisar Anuncios <span class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+                <li class="nav-item d-lg-flex clearfix">
+                    <a class="d-lg-none nav-link my-link" type="button" class="btn btn-primary"
+                        href="{{route('revisor.home')}}">{{__('ui.revisorAds')}}<span
+                            class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
                     </a>
-                    <a class="d-none d-lg-block btn btn-info btn-rounded me-2" type="button" class="btn btn-primary" href="{{route('revisor.home')}}">Revisar Anuncios <span class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+                    <a class="d-none d-lg-block btn btn-info btn-rounded me-2" type="button" class="btn btn-primary"
+                        href="{{route('revisor.home')}}">{{__('ui.revisorAds')}}<span
+                            class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
                     </a>
                 </li>
                 @endif
                 @endauth
-                <li class="nav-item d-lg-flex">
+                <li class="nav-item d-lg-flex clearfix">
                     @guest
-                    <a class="d-lg-none nav-link my-link" data-bs-toggle="modal" href="#modal" role="button">Regístrate
-                        o
-                        inicia
-                        sesión</a>
+                    <a class="d-lg-none nav-link my-link" data-bs-toggle="modal" href="#modal" role="button">{{__('ui.registerOrLogin')}}</a>
                     <a class="d-none d-lg-block btn btn-info btn-rounded me-2" data-bs-toggle="modal" href="#modal"
-                        role="button">Regístrate o
-                        inicia
-                        sesión</a>
+                        role="button">{{__('ui.registerOrLogin')}}</a>
                     @endguest
-                    <a id="dropActivation" class="d-lg-none nav-link my-link" @if (!Auth::user()) href="#modal" data-bs-toggle="modal"
-                        role="button" @else type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#modalAnunn" @endif>Crear Anuncio</a>
-                    <a id="dropActivacion" class="d-none d-lg-block btn btn-info btn-rounded" @if (!Auth::user()) href="#modal"
-                        data-bs-toggle="modal" role="button" @else type="button" class="btn btn-primary"
-                        data-bs-toggle="modal" data-bs-target="#modalAnunn" id="dropListen" @endif><i class="fas fa-plus me-1"></i> Crear Anuncio</a>
+                    <a id="dropActivation" class="d-lg-none nav-link my-link" @if (!Auth::user()) href="#modal"
+                        data-bs-toggle="modal" role="button" @else type="button" href="{{route('announcements.new')}}" @endif> {{__('ui.newAnnouncement')}}</a>
+                    <a id="dropActivacion" class="d-none d-lg-block btn btn-info btn-rounded" @if (!Auth::user())
+                        href="#modal" data-bs-toggle="modal" role="button" @else type="button" href="{{route('announcements.new')}}" @endif>
+                        <i class="fas fa-plus me-1"></i> {{__('ui.newAnnouncement')}}</a>
                 </li>
             </ul>
             <!--       <form class="d-flex">
@@ -88,4 +84,4 @@
     </div>
 </nav>
 @include('auth._modals')
-@include('announcements._modalanunn')
+

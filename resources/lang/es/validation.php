@@ -151,5 +151,6 @@ return [
     */
 
     'attributes' => [],
+    'selected' => 'Seleccione una categoría',
 
 ];

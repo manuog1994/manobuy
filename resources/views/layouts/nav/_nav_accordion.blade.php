@@ -4,7 +4,7 @@
             <p class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed my-link" type="button" data-mdb-toggle="collapse"
                     data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Categorias
+                    {{__('ui.categories')}}
                 </button>
             </p>
         </div>
@@ -12,7 +12,7 @@
             data-mdb-parent="#accordionFlushExample">
             <div class="accordion-body">
                 @foreach ($categories as $category)
-                <li><a class="my-link" href="{{route('announcements.category', $category->id)}}">{{$category->name}}</a>
+                <li><a class="my-link" href="{{route('announcements.category', $category->id)}}">{{__("ui.{$category->name}")}}</a>
                 </li>
                 @endforeach
             </div>

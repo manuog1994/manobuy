@@ -209,4 +209,18 @@ a.my-logo{
   }
 
 
+  @mixin clearfix() { &::after { display: block; clear: both; content: ""; } };
+
+  .element { @include clearfix; };
+
+  .mask-custom {
+    backdrop-filter: blur(9px);
+    background-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .mask-custom2 {
+    backdrop-filter: blur(9px);
+    background-color: rgba(125, 125, 125, 0.45);
+  }
+
   

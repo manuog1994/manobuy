@@ -2,40 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
 use App\Models\Category;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Storage;
 
 class AnnouncementController extends Controller
 {
-    public function create(Request $request)
-    {
-        $request = $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'img' => 'nullable',
-            'category_id' => 'required',
-        ]);
-        //dd($request);
-        $user = Auth::user();
-        
-        $category = Announcement::create([
-            'name' => $request['name'],
-            'description' => $request['description'],
-            'price' => $request['price'],
-            'category_id' => $request['category_id'],
-            'img' => $request['img'] = null, 
-            'user_id' => Auth::id()
-        ]);   
-        
-        $uniqueSecret = $request->input('uniqueSecret');
-        dd($uniqueSecret);
-
-            return redirect('/')->with('created', 'Su anuncio a sido creado con éxito, en unos minutos nuestros revisores aceptaran o rechazaran su anuncio');
-    }
-
      public function viewAnnouncement($id)
     {
         $category = Category::findOrFail($id);
@@ -51,6 +28,8 @@ class AnnouncementController extends Controller
 
         return view('announcements.detail', ["detail"=>$detail]);
     }
+
+
 
 
 
