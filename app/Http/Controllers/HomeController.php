@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
@@ -29,13 +30,15 @@ class HomeController extends Controller
     public function uploadImages(Request $request)
     {
         $uniqueSecret = $request->input('uniqueSecret');
-        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
 
-        session()->push("images.{$uniqueSecret}", $fileName);
+        dispatch(new ResizeImage($filePath,120,120));
+
+        session()->push("images.{$uniqueSecret}", $filePath);
 
         return response()->json(
             [
-                'id' => $fileName
+                'id' => $filePath
             ]
         );
     }
@@ -96,6 +99,12 @@ class HomeController extends Controller
             $newFilePath = "public/announcements/{$category->id}/{$fileName}";
             Storage::move($image, $newFilePath);
 
+            dispatch(new ResizeImage(
+                $newFilePath,
+                300,
+                150
+            ));
+
             $i->file = $newFilePath;
             $i->announcement_id = $category->id;
             $i->save();
@@ -120,8 +129,8 @@ class HomeController extends Controller
         foreach ($images as $image) {
             $data[] = [
                 'id' => $image,
+                'src' => AnnouncementImage::getUrlByFilePath($image, 120, 120),
                 'name' => basename($image),
-                'src' => Storage::url($image),
                 'size'=> Storage::size($image)
             ];
         }

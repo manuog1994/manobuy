@@ -14,7 +14,7 @@
         <ul class="slider m-auto">
             @foreach ($announcement->images as $image)
             <li id="slide{{$image->id}}">
-                <img src="{{ Storage::url($image->file) }}" class="img-fluid" alt="...">
+                <img src="{{$image->getUrl(300,150)}}" class="img-fluid" alt="...">
             </li>
             @endforeach
         </ul>

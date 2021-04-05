@@ -14,7 +14,7 @@
                             <div id="slideri">
                                 <figure>
                                     @foreach ($announcement->images as $image)
-                                        <img src="{{ Storage::url($image->file) }}">
+                                        <img src="{{$image->getUrl(300,150)}}">
                                     @endforeach
                                 </figure>
                             </div>
