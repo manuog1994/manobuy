@@ -49,6 +49,27 @@
         <div class="col-12 col-md-3 mt-2">
             <img src="{{$image->getUrl(300,150)}}" width="100%;" alt="">
         </div>
+        <div class="col-md-8">
+            <ul>
+                <li>Adult : {{ $image->adult }}</li>
+                <li>spoof : {{$image->spoof}}</li>
+                <li>medical : {{$image->medical}}</li>
+                <li>violence : {{$image->violence}}</li>
+                <li>racy : {{$image->racy}}</li>
+                <li>Id # : {{$image->id}}</li>
+                <li>Public route : {{$image->file}}</li>
+                <li>Storage route : {{Storage::url($image->file)}}</li>
+            </ul>
+            <br>
+            <h6>Labels</h6>
+            <ul>
+                @if ($image->labels)
+                    @foreach ($image->labels as $label)
+                        <li>{{$label}}</li>
+                    @endforeach
+                @endif
+            </ul>
+        </div>
         @endforeach
     </div>
 </div>
