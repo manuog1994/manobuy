@@ -54,4 +54,17 @@
         "Servicios" => "Servizi",
         "tab" => "Tutti gli annunci, da",
         "home" => "Inizio",
+        "adult" => "Adulto",
+        "spoof" => "Parodia",
+        "medical" => "Medico",
+        "violence" => "Violenza",
+        "racy" => "Razzista",
+        "publicRoute" => "Percorso pubblico",
+        "storageRoute" => "Percorso di archiviazione",
+        "VERY_UNLIKELY" => "Molto spiacevole",
+        "VERY_LIKELY" => "Molto probabilmente",
+        "UNLIKELY" => "Improbabile",
+        "LIKELY" => "Probabile",
+        "POSSIBLE" => "POSIBLE",
+
     ];

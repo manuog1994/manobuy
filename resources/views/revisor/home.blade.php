@@ -51,14 +51,14 @@
         </div>
         <div class="col-md-8">
             <ul>
-                <li>Adult : {{ $image->adult }}</li>
-                <li>spoof : {{$image->spoof}}</li>
-                <li>medical : {{$image->medical}}</li>
-                <li>violence : {{$image->violence}}</li>
-                <li>racy : {{$image->racy}}</li>
+                <li>{{__('ui.adult')}} : {{__("ui.{$image->adult}")}}</li>
+                <li>{{__('ui.spoof')}} : {{__("ui.{$image->spoof}")}}</li>
+                <li>{{__('ui.medical')}} : {{__("ui.{$image->medical}")}}</li>
+                <li>{{__('ui.violence')}} : {{__("ui.{$image->violence}")}}</li>
+                <li>{{__('ui.racy')}} : {{__("ui.{$image->racy}")}}</li>
                 <li>Id # : {{$image->id}}</li>
-                <li>Public route : {{$image->file}}</li>
-                <li>Storage route : {{Storage::url($image->file)}}</li>
+                <li>{{__('ui.publicRoute')}} : {{$image->file}}</li>
+                <li>{{__('ui.storageRoute')}} : {{Storage::url($image->file)}}</li>
             </ul>
             <br>
             <h6>Labels</h6>

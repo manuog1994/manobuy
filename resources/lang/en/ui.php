@@ -55,4 +55,17 @@
         "Servicios" => "Services",
         "tab" => "All ads, from",
         "home" => "Home",
+        "adult" => "Adult",
+        "spoof" => "Spoof",
+        "medical" => "Medical",
+        "violence" => "Violence",
+        "racy" => "Racy",
+        "publicRoute" => "Public route",
+        "storageRoute" => "Storage route",
+        "VERY_UNLIKELY" => "VERY_UNLIKELY",
+        "VERY_LIKELY" => "VERY_LIKELY",
+        "UNLIKELY" => "UNLIKELY",
+        "LIKELY" => "LIKELY",
+        "POSSIBLE" => "POSSIBLE",
+
     ];
