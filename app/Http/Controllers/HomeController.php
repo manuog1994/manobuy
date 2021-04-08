@@ -108,6 +108,16 @@ class HomeController extends Controller
                 300,
                 150
             ));
+            dispatch(new ResizeImage(
+                $newFilePath,
+                500,
+                250
+            ));
+            dispatch(new ResizeImage(
+                $newFilePath,
+                800,
+                500
+            ));
 
             $i->file = $newFilePath;
             $i->announcement_id = $category->id;

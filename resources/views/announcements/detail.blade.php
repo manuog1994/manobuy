@@ -9,24 +9,11 @@
 @section('content')
 @foreach ($announcements as $announcement)
 @if (Route::current()->id == $announcement->id)
-<div class="row mt-5">
+<div class="row mt-5 d-flex justify-content-center align-content-center">
     <div class="col-12">
-        <ul class="slider m-auto">
-            @foreach ($announcement->images as $image)
-            <li id="slide{{$image->id}}">
-                <img src="{{$image->getUrl(300,150)}}" class="img-fluid" alt="...">
-            </li>
-            @endforeach
-        </ul>
-        <ul class="menu m-auto mt-3">
-            @foreach ($announcement->images as $image)
-            <li>
-                <a href="#slide{{$image->id}}"></a>
-            </li>
-            @endforeach
-        </ul>
-    </div>
-    <div class="col-12 text-center mt-4">
+        @include('announcements._slider')
+    </div>    
+    <div class="col-12 text-center mt-4 w-75 m-auto">
         <h1 class="my-nav rounded-pill">{{$announcement->name}}</h1>
         <h5 class="text-start mb-2">{{__('ui.description')}}:</h5>
         <div class="border rounded p-5">

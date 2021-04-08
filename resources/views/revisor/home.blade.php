@@ -47,7 +47,7 @@
     <div class="row">
         @foreach ($announcement->images as $image)
         <div class="col-12 col-md-3 mt-2">
-            <img src="{{$image->getUrl(300,150)}}" width="100%;" alt="">
+            <img src="{{$image->getUrl(500,250)}}" width="100%;" alt="">
         </div>
         <div class="col-md-8">
             <ul>
@@ -62,7 +62,7 @@
             </ul>
             <br>
             <h6>Labels</h6>
-            <ul>
+            <ul class="mb-2">
                 @if ($image->labels)
                     @foreach ($image->labels as $label)
                         <li>{{$label}}</li>

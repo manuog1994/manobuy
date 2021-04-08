@@ -29,10 +29,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 require('bootstrap');
 require('@popperjs/core');
-require('./newAnnouncement')
+require('./newAnnouncement');
 import Dropzone from 'dropzone';
 import * as mdb from 'mdb-ui-kit'; // lib
 import { Input } from 'mdb-ui-kit'; // module
 window.Dropzone = require('dropzone');
 Dropzone.autoDiscover = false;
+
+/* SPLIDE JS */
+import Splide from '@splidejs/splide';
+new Splide( '.splide' ).mount();
+new Splide( '#splide', {
+	type   : 'loop',
+	perPage: 3,
+	focus  : 'center',
+} ).mount();
+
 
