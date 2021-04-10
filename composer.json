@@ -12,8 +12,10 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/fortify": "^1.7",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5",
-        "spatie/image": "^1.10"
+        "laravel/scout": "^8.6",
+        "laravel/tinker": "^2.6",
+        "spatie/image": "^1.10",
+        "teamtnt/laravel-scout-tntsearch-driver": "^11.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

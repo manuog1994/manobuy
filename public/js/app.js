@@ -10909,6 +10909,10 @@ new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_2___default())('#splide', {
   perPage: 3,
   focus: 'center'
 }).mount();
+new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_2___default())('#splideCategory', {
+  direction: 'ttb',
+  height: '15rem'
+}).mount();
 
 /***/ }),
 

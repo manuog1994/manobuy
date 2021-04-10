@@ -4,14 +4,32 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use Laravel\Scout\Searchable;
 use App\Models\Announcement;
 use App\Models\AnnouncementImage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+
 class Announcement extends Model
 {
     use HasFactory;
+    use Searchable;
+
+    public function toSearchableArray()
+    {
+        $array = [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'category' => $this->category->name,
+            'other' => 'announcements announcement',
+
+        ];
+
+        
+        return $array;
+    }
 
     protected $fillable = ['name', 'description', 'price', 'category_id', 'user_id', 'img'];
 

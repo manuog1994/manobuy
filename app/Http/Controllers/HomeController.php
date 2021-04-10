@@ -17,11 +17,12 @@ use App\Jobs\GoogleVisionSafeSearchImage;
 
 class HomeController extends Controller
 {
-
+    
 
     public function index()
     {
         $announcements = Announcement::where('is_accepted', true)->get();
+        
         return view('home', compact('announcements'));
     }
 
@@ -131,6 +132,7 @@ class HomeController extends Controller
         }
 
         File::deleteDirectory(storage_path("app/public/temp/{$uniqueSecret}"));
+        
 
         return redirect('/')->with('created', 'Su anuncio a sido creado con éxito, en unos minutos nuestros revisores aceptaran o rechazaran su anuncio');
     }
@@ -159,5 +161,13 @@ class HomeController extends Controller
 
 
 
+    public function search(Request $request)
+    {
+        $q = $request->input('q');
+        $announcements = Announcement::search($q)
+            ->where('is_accepted', true)
+            ->get();
+        return view('search_results', compact('q', 'announcements'));
+    } 
      
 }

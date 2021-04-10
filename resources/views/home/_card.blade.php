@@ -12,19 +12,18 @@
                 <p class="text-end">{{__('ui.price')}}:
                     <strong>{{$announcement->price}}&euro;</strong>
                 </p>
-                <div class="d-flex justify-content-end mt-5">
-                    <a class="text-mycard text-end"
-                        href="{{route('announcements.detail', $announcement->id)}}">{{__('ui.goAnnouncement')}}</a>
-                </div>
-                <div class="d-flex justify-content-between" style="margin-top: 10px">
+                <div class="d-flex justify-content-between m-auto" style="margin-top: 10px">
                     <a class="my-link"
                         href="{{route('announcements.category', $announcement->category_id)}}">{{__("ui.{$announcement->category->name}")}}</a>
-                    <p class="card-text">
-                        <small class="text-muted">{{__('ui.created')}}:
-                            {{$announcement->created_at->format('d/m/Y')}}
-                            -- {{$announcement->user->name}}</small>
-                    </p>
+                    <a class="text-mycard"
+                        href="{{route('announcements.detail', $announcement->id)}}">{{__('ui.goAnnouncement')}}</a>
                 </div>
+                <p class="card-text text-center mt-2">
+                    <small class="text-muted">{{__('ui.created')}}:
+                        {{$announcement->created_at->format('d/m/Y')}} --
+                        {{$announcement->user->name}}
+                    </small>
+                </p>
             </div>
         </div>
     </div>

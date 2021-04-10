@@ -31,9 +31,3 @@
         </div>
     </div>
     @endforeach
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center mt-5">
-            {{$announcements->links()}}
-        </div>
-    </div>
-</div>

@@ -19,6 +19,7 @@ class AnnouncementController extends Controller
         $announcements = $category->announcements()
                                     ->where('is_accepted', true)
                                     ->paginate(10);
+                                    
         return view('announcement', compact('category', 'announcements'));
     }
 

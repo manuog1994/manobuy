@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-2 m-auto" style="max-width: 1200px">
     <div class="col-12 text-center mt-3">
         <h2>{{__('ui.lastAnnouncements')}}</h2>
     </div>
@@ -16,7 +16,7 @@
         </div>
     </div>
 </div>
-<div class="d-none d-lg-block row">
+<div class="d-none d-lg-block row m-auto" style="max-width: 1200px">
     <div class="splide" id="splide">
         <div class="splide__track">
             <ul class="splide__list">

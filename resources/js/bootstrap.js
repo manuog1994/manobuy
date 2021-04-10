@@ -45,4 +45,9 @@ new Splide( '#splide', {
 	focus  : 'center',
 } ).mount();
 
+new Splide( '#splideCategory', {
+	direction: 'ttb',
+	height   : '15rem',
+} ).mount();
+
 

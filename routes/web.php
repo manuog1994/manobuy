@@ -38,3 +38,6 @@ Route::post('/revisor/announcement/{id}/reject', [RevisorController::class, 'rej
 
 
 Route::post('/locale/{locale}', [HomeController::class, 'locale'])->name('locale');
+
+
+Route::get('/search', [HomeController::class,'search'])->name('search');
