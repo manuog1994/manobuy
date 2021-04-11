@@ -24,7 +24,7 @@
 </div>
 <!-- Second modal Register -->
 <div class="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header my-nav">
                 <h5 class="modal-title" id="exampleModalLabel">{{__('ui.register')}}</h5>
@@ -36,3 +36,4 @@
         </div>
     </div>
 </div>
+

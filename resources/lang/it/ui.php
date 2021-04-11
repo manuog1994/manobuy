@@ -73,4 +73,5 @@
         "myannouncements" => "I miei annunci",
         "search" => "Cercare...",
         "results" => "Risultati di ricerca:",
+        "enterPhone" => "Inserisci il tuo numero di telefono",
     ];

@@ -16,8 +16,15 @@
         <label for="exampleInputPassword1" class="form-label">{{__('ui.password')}}:</label>
         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
     </div>
-    <label for="exampleInputPassword1" class="form-label">{{__('ui.confirmPassword')}}:</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">{{__('ui.confirmPassword')}}:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPhone" class="form-label">{{__('ui.phone')}}:</label>
+        <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp"
+            placeholder="+34777000222" name="phone">
+        <div id="phoneHelp" class="form-text">{{__('ui.enterPhone')}}.</div>
     </div>
     <div class="d-flex justify-content-center mb-5 clearfix">
         <button type="submit" class="btn btn-info rounded-pill">{{__('ui.register')}}</button>

@@ -11,7 +11,9 @@
                     @include('layouts.nav._dropdown')
                 </li>
                 {{-- Accordion Menú --}}
-                @include('layouts.nav._nav_accordion')
+
+                    @include('layouts.nav._nav_accordion')
+
                 <li class="nav-item ms-lg-3 me-lg-3 m-auto" style="">
                     @include('layouts.nav._search')
                </li>

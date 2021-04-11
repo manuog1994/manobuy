@@ -9,7 +9,7 @@
           <p class="">
             {{__('ui.email')}}: {{auth()->user()->email}}
           </p>
-          <p>{{__('ui.phone')}}</p>
+          <p>{{__('ui.phone')}} {{auth()->user()->phone}}</p>
         </div>
     </div>
 </div>

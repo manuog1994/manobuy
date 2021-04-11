@@ -74,5 +74,5 @@
         "myannouncements" => "My announcements",
         "search" => "Search...",
         "results" => "Search results:",
-
+        "enterPhone" => "Enter your phone number",
     ];

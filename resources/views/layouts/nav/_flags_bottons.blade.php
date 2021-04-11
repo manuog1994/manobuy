@@ -4,14 +4,5 @@
         <button type="submit" class="my-flags">
             <span class="flag-icon flag-icon-{{$nation}}"></span>
         </button>
-
     </form>
-    
 </li>
-
-
-
-
-
-
-    

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{__('ui.myprofile')}} -- {{auth()->user()->name}}
+@endsection
 @section('content')
 <div class="row m-auto" style="max-width: 1500px">
     @include('profile._dates')
