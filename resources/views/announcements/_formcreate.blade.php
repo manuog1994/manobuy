@@ -1,6 +1,6 @@
 <form action="{{route('announcements.create')}}" method="POST" enctype="multipart/form-data">
     @csrf
-    <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret ?? ''}}">
+    <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
     <div class="mb-3">
         <label for="validationCustom04" class="form-label">{{__('ui.selectCategory')}}:</label>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category_id"
@@ -45,7 +45,8 @@
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">{{__('ui.description')}}:</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="description"
-            aria-describedby="descriptionHelp">{{old('description')}}</textarea>
+            aria-describedby="descriptionHelp" minlength="50">{{old('description')}}</textarea>
+        <div id="descriptionHelp" class="form-text">Introduce al menos 50 caracteres.</div>
         @error('description')
         <small id="descriptionHelp" class="form-text" style="color:red;">
             {{ $message }}

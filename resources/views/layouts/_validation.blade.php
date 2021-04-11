@@ -4,6 +4,9 @@
 @if (session('registered'))
     <div class="alert alert-success">{{session('registered')}}</div>
 @endif
+@if (session('errorLogin'))
+    <div class="alert alert-danger">{{session('errorLogin')}}</div>
+@endif
 
 @if ($errors->any())
     <div class="alert alert-danger">

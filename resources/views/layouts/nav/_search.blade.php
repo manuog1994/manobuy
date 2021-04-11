@@ -1,13 +1,13 @@
-<form class="d-flex input-group w-auto" action="{{ route('search') }}" method="GET">
+<form class="d-flex w-auto" action="{{ route('search') }}" method="GET">
     <input
       type="text"
       class="form-control"
-      placeholder="Buscar..."
+      placeholder="{{__('ui.search')}}"
       aria-label="Search"
-      name="q"
+      name="q" minlength="2"
     />
     <button
-      class="btn btn-outline-dark"
+      class="btn btn-outline-info"
       type="submit"
       data-mdb-ripple-color="dark"
     >

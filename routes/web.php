@@ -21,6 +21,7 @@ use App\Http\Controllers\AnnouncementController;
     return view('welcome');
 }); */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/profile/{userId}', [HomeController::class, 'userProfile'])->name('profile');
 
 Route::get('/announcements/new',[HomeController::class,'newAnnouncement'])->name('announcements.new');
 Route::post('/announcements/create',[HomeController::class,'create'])->name('announcements.create');

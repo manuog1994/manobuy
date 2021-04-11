@@ -12,19 +12,19 @@
                 </li>
                 {{-- Accordion Menú --}}
                 @include('layouts.nav._nav_accordion')
-                <li class="nav-item ms-lg-5 m-auto">
+                <li class="nav-item ms-lg-3 me-lg-3 m-auto" style="">
                     @include('layouts.nav._search')
                </li>
             </ul>
-            {{-- Flags bottons --}}
-            <ul class="navbar-nav m-auto">
-                @include('layouts.nav._flags_bottons', ['lang'=>'es', 'nation'=>'es'])
-                @include('layouts.nav._flags_bottons', ['lang'=>'en', 'nation'=>'gb'])
-                @include('layouts.nav._flags_bottons', ['lang'=>'it', 'nation'=>'it'])
-            </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 @include('layouts.nav._user')
+                @include('layouts.nav._accordion_user')
                 @include('layouts.nav._bottons')
+            </ul>
+            {{-- Flags bottons --}}
+            <ul class="navbar-nav">
+                @include('layouts.nav._flags_dropdown')
+                @include('layouts.nav._accordion_lang')
             </ul>
         </div>
     </div>

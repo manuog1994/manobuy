@@ -2,7 +2,7 @@
     <div class="accordion-item">
         <div class="d-flex justify-content-center">
             <p class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed my-link" type="button" data-mdb-toggle="collapse"
+                <button class="accordion-button bg-transparent shadow-none collapsed my-link" type="button" data-mdb-toggle="collapse"
                     data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     {{__('ui.categories')}}
                 </button>

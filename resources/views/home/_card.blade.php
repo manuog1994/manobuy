@@ -15,7 +15,7 @@
                 <div class="d-flex justify-content-between m-auto" style="margin-top: 10px">
                     <a class="my-link"
                         href="{{route('announcements.category', $announcement->category_id)}}">{{__("ui.{$announcement->category->name}")}}</a>
-                    <a class="text-mycard"
+                    <a class="text-mycard my-link"
                         href="{{route('announcements.detail', $announcement->id)}}">{{__('ui.goAnnouncement')}}</a>
                 </div>
                 <p class="card-text text-center mt-2">

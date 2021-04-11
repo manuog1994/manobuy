@@ -66,5 +66,11 @@
         "UNLIKELY" => "Improbabile",
         "LIKELY" => "Probabile",
         "POSSIBLE" => "POSIBLE",
-
+        "name" => "Nome: ",
+        "phone" => "Telefono: ",
+        "dates" => "Informazioni sui contatti",
+        "myprofile" => "Il mio profilo",
+        "myannouncements" => "I miei annunci",
+        "search" => "Cercare...",
+        "results" => "Risultati di ricerca:",
     ];

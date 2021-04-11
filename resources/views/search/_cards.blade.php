@@ -16,7 +16,7 @@
                         <div class="d-flex justify-content-between m-auto" style="margin-top: 10px">
                             <a class="my-link"
                                 href="{{route('announcements.category', $announcement->category_id)}}">{{__("ui.{$announcement->category->name}")}}</a>
-                            <a class="text-mycard text-end"
+                            <a class="text-mycard text-end my-link"
                                 href="{{route('announcements.detail', $announcement->id)}}">{{__('ui.goAnnouncement')}}</a>
                         </div>
                         <p class="card-text text-center mt-2">
@@ -31,3 +31,4 @@
         </div>
     </div>
     @endforeach
+</div>

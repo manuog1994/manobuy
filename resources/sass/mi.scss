@@ -53,7 +53,16 @@ a.my-logo{
     text-decoration: none;
     color: rgb(255, 153, 0);
     font-family: 'Indie Flower', cursive;
-    font-size: 32px;
+    font-size: 26px;
+}
+
+.my-iconsize{
+  font-size: 26px;
+}
+
+.my-flags{
+  background-color: transparent;
+  border: transparent;
 }
 
 
@@ -78,7 +87,7 @@ a.my-logo{
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     src: url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
   }
   .transition {
@@ -97,7 +106,7 @@ a.my-logo{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 100%;
     -webkit-transform: 0px 0px 1;
     -moz-transform: 0px 0px 1;
     -ms-transform: 0px 0px 1;
@@ -130,11 +139,11 @@ a.my-logo{
     -ms-transform: 0px 0px 1;
     -o-transform: 0px 0px 1;
     transform: 0px 0px 1;
-    transform: translate(0px, 0px) scale(1);
-    -webkit-transform: translate(0px, 0px) scale(1);
-    -moz-transform: translate(0px, 0px) scale(1);
-    -o-transform: translate(0px, 0px) scale(1);
-    -ms-transform: translate(0px, 0px) scale(1);
+    transform: translate(0px, 0px) scale(0.5);
+    -webkit-transform: translate(0px, 0px) scale(0.5);
+    -moz-transform: translate(0px, 0px) scale(0.5);
+    -o-transform: translate(0px, 0px) scale(0.5);
+    -ms-transform: translate(0px, 0px) scale(0.5);
     -webkit-transition: all 0s ease 0s;
     -moz-transition: all 0s ease 0s;
     -o-transition: all 0s ease 0s;
@@ -163,51 +172,12 @@ a.my-logo{
     -ms-transform: 0px 0px 2;
     -o-transform: 0px 0px 2;
     transform: 0px 0px 2;
-    transform: translate(0px, 0px) scale(2);
-    -webkit-transform: translate(0px, 0px) scale(2);
-    -moz-transform: translate(0px, 0px) scale(2);
-    -o-transform: translate(0px, 0px) scale(2);
-    -ms-transform: translate(0px, 0px) scale(2);
+    transform: translate(0px, 0px) scale(1);
+    -webkit-transform: translate(0px, 0px) scale(1);
+    -moz-transform: translate(0px, 0px) scale(1);
+    -o-transform: translate(0px, 0px) scale(1);
+    -ms-transform: translate(0px, 0px) scale(1);
   }
-
-  /* Cards Css */
-  .my-cont{
-    position: relative;
-  }
-  
-  .image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-  }
-
-  .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .my-cont:hover .image {
-    opacity: 0.3;
-  }
-  
-  .my-cont:hover .middle {
-    opacity: 1 !important;
-  }
-
-  .text-mycard {
-    color: black; 
-    font-size: 18px;
-  }
-
 
   @mixin clearfix() { &::after { display: block; clear: both; content: ""; } };
 

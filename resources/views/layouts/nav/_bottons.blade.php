@@ -1,6 +1,6 @@
 <li class="nav-item d-lg-flex clearfix">
     @guest
-    <a class="d-lg-none nav-link my-link" data-bs-toggle="modal" href="#modal" role="button">{{__('ui.registerOrLogin')}}</a>
+    <a class="d-lg-none nav-link my-link mt-2" data-bs-toggle="modal" href="#modal" role="button">{{__('ui.registerOrLogin')}}</a>
     <a class="d-none d-lg-block btn btn-info btn-rounded me-2" data-bs-toggle="modal" href="#modal"
         role="button">{{__('ui.registerOrLogin')}}</a>
     @endguest

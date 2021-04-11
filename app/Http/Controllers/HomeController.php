@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
@@ -169,5 +170,16 @@ class HomeController extends Controller
             ->get();
         return view('search_results', compact('q', 'announcements'));
     } 
+
+    public function userProfile($userId)
+    {
+        $user = Auth::user($userId);
+
+        if(!$user)
+            return back()->with('errorLogin', 'No has iniciado sesión, inicia sesión y vuelve a la página.');
+            
+
+        return view('profile', compact('user'));
+    }
      
 }
