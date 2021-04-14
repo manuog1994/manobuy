@@ -93,7 +93,7 @@
 <div class="row">
     <div class="col-12 text-center">
         <h2 class="mt-5">{{__('ui.notAnnouncements')}}</h2>
-        <img src="/storage/images/undraw_work_in_progress_uhmv.png" alt="">
+        <img src="/categoriesImages/undraw_work_in_progress_uhmv.png" alt="">
     </div>
 </div>
 @endif
