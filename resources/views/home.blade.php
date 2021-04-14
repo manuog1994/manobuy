@@ -2,7 +2,7 @@
 @section('title', __('ui.titlepage'))
 @section('content')
 <header class="row bg-image d-flex justify-content-center align-items-center shadow text-center"
-    style="background-image: url('/public/categoriesImages/hand-shake-on-yellow.jpg'); height: 40vh;">
+    style="background-image: url('/categoriesImages/hand-shake-on-yellow.jpg'); height: 40vh;">
     <div class="col-12 text-center mask-custom rounded-pill p-2 m-5 shadow" style="max-width: 800px;">
         <h1 class="mt-2 text-dark">{{__('ui.welcome')}}<span class="iconNav"><i
                     class="bi bi-megaphone p-1 rounded mt-5 ms-1 me-2 text-light"></i>Mano<span
