@@ -28,7 +28,6 @@
         </div>
     </div>
 </div>
+@endsection
 @endif
 @endforeach
-@endsection
-@include('announcements._contact_modal')

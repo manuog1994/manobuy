@@ -32,4 +32,5 @@
     </div>
 </nav>
 @include('auth._modals')
+@include('announcements._contact_modal')
 
