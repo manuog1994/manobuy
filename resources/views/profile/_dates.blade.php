@@ -1,15 +1,21 @@
-<div class="col-12 m-auto text-center mt-3">
-    <div class="card bg-light mb-3" style="max-width: 1500px">
-        <h1 class="card-header">{{__('ui.myprofile')}}</h1>
-        <div class="card-body">
-          <h5 class="card-title">{{__('ui.dates')}}</h5>
-          <p class="">
-            {{__('ui.name')}}{{auth()->user()->name}}
-          </p>
-          <p class="">
-            {{__('ui.email')}}: {{auth()->user()->email}}
-          </p>
-          <p>{{__('ui.phone')}} {{auth()->user()->phone}}</p>
-        </div>
+<div class="row">
+  <div class="col-6 m-auto text-center mt-3 card p-5">
+    <h3 class="text-center mb-4">{{__('ui.myDates')}}</h3>
+      <div class="form-outline mb-3">
+        <input disabled type="text" id="typeText" class="form-control" value="{{Auth::user()->name}}" />
+        <label class="form-label" for="typeText">{{__('ui.fullName')}}</label>
+      </div>
+      <div class="form-outline mb-3">
+        <input disabled type="email" id="typeEmail" class="form-control" value="{{Auth::user()->email}}"/>
+        <label class="form-label" for="typeEmail">{{__('ui.email')}}</label>
+      </div>
+      <div class="form-outline mb-3">
+        <input disabled type="number" id="typePhone" class="form-control" value="{{Auth::user()->phone}}"/>
+        <label class="form-label" for="typePhone">{{__('ui.phone')}}</label>
+      </div>
+      <div class="d-flex justify-content-center clearfix">
     </div>
+  </div>
 </div>
+
+

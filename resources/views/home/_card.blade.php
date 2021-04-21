@@ -1,7 +1,9 @@
 <div class="card m-auto w-75">
     <div class="row">
         <div class="col-12 m-auto">
-            @include('home._carousel')
+            @foreach($announcement->images->take(1) as $image)
+            <img src="{{$image->getUrl(800,500)}}" width="100%;" alt="{{$announcement->name}}">
+            @endforeach
         </div>
         <div class="col-12">
             <div class="card-body">

@@ -74,4 +74,11 @@
         "search" => "Cercare...",
         "results" => "Risultati di ricerca:",
         "enterPhone" => "Inserisci il tuo numero di telefono",
+        "myDates" => "I miei dati",
+        "forgotPassword" => "Password dimenticata?",
+        "send" => "Invia",
+        "helpResetPassword" => "Inserisci la tua email e riceverai nella tua email un link per reimpostare la tua password.",
+        "enterCredentials" => "Inserisci le tue credenziali",  
+        "newPassword" => "Nuova password",
+        "confirmPassword" => "Conferma la tua nuova password",
     ];

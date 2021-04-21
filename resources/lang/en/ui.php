@@ -75,4 +75,11 @@
         "search" => "Search...",
         "results" => "Search results:",
         "enterPhone" => "Enter your phone number",
+        "myDates" => "My dates",
+        "forgotPassword" => "Forgot password?",
+        "send" => "Send",
+        "helpResetPassword" => "Enter your email and you will receive in your email a link to reset your password.",
+        "enterCredentials" => "Enter your credentials",  
+        "newPassword" => "New password",
+        "confirmPassword" => "Confirm your new password",
     ];

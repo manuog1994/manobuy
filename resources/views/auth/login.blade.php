@@ -12,6 +12,11 @@
     <label for="exampleInputPassword1" class="form-label">{{__('ui.password')}}:</label>
     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
   </div>
+  <div class="col text-end">
+    <!-- Simple link -->
+    <a href="{{route('password.request')}}">{{__('ui.forgotPassword')}}</a>
+  </div>
+</div>
   <div class="d-flex justify-content-center clearfix">
       <button type="submit" class="btn btn-info btn-rounded">{{__('ui.enter')}}</button>
   </div>

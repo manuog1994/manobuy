@@ -75,4 +75,12 @@
         "search" => "Buscar...",
         "results" => "Resultados de la búsqueda:",
         "enterPhone" => "Introduzca su número de teléfono",
+        "myDates" => "Mis datos",
+        "forgotPassword" => "¿Olvidaste tu contraseña?",
+        "send" => "Enviar",
+        "resetPassword" => "Resetea tu Contraseña",
+        "helpResetPassword" => "Introduce tu correo electrónico y recibirás en tu correo electrónico un enlace para resetear tu contraseña.",
+        "enterCredentials" => "Introduce tus credenciales",
+        "newPassword" => "Nueva contraseña",
+        "confirmNewPassword" => "Confirma tu nueva contraseña",  
     ];

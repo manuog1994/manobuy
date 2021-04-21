@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,8 @@ Route::post('/locale/{locale}', [HomeController::class, 'locale'])->name('locale
 
 
 Route::get('/search', [HomeController::class,'search'])->name('search');
+
+Route::get('/forgot-password', [ResetPasswordController::class, 'forgotView'])->middleware('guest')->name('password.request');
+Route::post('/forgot-password', [ResetPasswordController::class, 'forgotLink'])->middleware('guest')->name('password.email');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'resetView'])->middleware('guest')->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'validationPass'])->middleware('guest')->name('password.update');
