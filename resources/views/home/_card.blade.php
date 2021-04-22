@@ -22,8 +22,8 @@
                 </div>
                 <p class="card-text text-center mt-2">
                     <small class="text-muted">{{__('ui.created')}}:
-                        {{$announcement->created_at->format('d/m/Y')}} --
-                        {{$announcement->user->name}}
+                        {{$announcement->created_at->format('d/m/Y')}} |
+                        {{substr($announcement->user->name, 0, 20)}}
                     </small>
                 </p>
             </div>

@@ -82,5 +82,6 @@
         "helpResetPassword" => "Introduce tu correo electrónico y recibirás en tu correo electrónico un enlace para resetear tu contraseña.",
         "enterCredentials" => "Introduce tus credenciales",
         "newPassword" => "Nueva contraseña",
-        "confirmNewPassword" => "Confirma tu nueva contraseña",  
+        "confirmNewPassword" => "Confirma tu nueva contraseña",
+        "selectLang" => "Selecciona tu idioma",  
     ];

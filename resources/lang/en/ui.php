@@ -82,4 +82,5 @@
         "enterCredentials" => "Enter your credentials",  
         "newPassword" => "New password",
         "confirmPassword" => "Confirm your new password",
+        "selectLang" => "Select your language",
     ];

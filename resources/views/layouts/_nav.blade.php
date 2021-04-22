@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg my-nav shadow fixed">
+<nav class="navbar navbar-expand-lg my-nav shadow">
     <div class="container-fluid">
         @include('layouts.nav._logo')
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
@@ -11,16 +11,19 @@
                     @include('layouts.nav._dropdown')
                 </li>
                 {{-- Accordion Menú --}}
-
                     @include('layouts.nav._nav_accordion')
-
-                <li class="nav-item ms-lg-3 me-lg-3 m-auto" style="">
+            </ul>
+            <ul class="navbar-nav m-auto" style="width:60%;">
+                <li class="nav-item ms-lg-3 me-lg-3 w-100">
                     @include('layouts.nav._search')
                </li>
             </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <ul class="navbar-nav ms-auto">
                 @include('layouts.nav._user')
                 @include('layouts.nav._accordion_user')
+            </ul>
+
+            <ul class="navbar-nav">
                 @include('layouts.nav._bottons')
             </ul>
             {{-- Flags bottons --}}
@@ -31,6 +34,5 @@
         </div>
     </div>
 </nav>
-@include('auth._modals')
-@include('announcements._contact_modal')
+
 

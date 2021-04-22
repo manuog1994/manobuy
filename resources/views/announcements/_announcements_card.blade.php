@@ -1,10 +1,12 @@
 <div class="row">
     @foreach ($announcements->reverse() as $announcement)
-    <div class="col-12 col-xxl-4 mt-sm-0 d-flex justify-content-center my-cont m-auto" style="max-width: 800px">
+    <div class="col-12 mt-sm-0 d-flex justify-content-center my-cont m-auto" style="max-width: 800px">
         <div class="card mb-3">
             <div class="row">
                 <div class="col-12 col-md-6 m-auto">
-                    @include('home._carousel')
+                    @foreach($announcement->images->take(1) as $image)
+                    <img src="{{$image->getUrl(800,500)}}" width="100%;" alt="{{$announcement->name}}">
+                    @endforeach
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
@@ -21,7 +23,7 @@
                         </div>
                         <p class="card-text text-center mt-2">
                             <small class="text-muted">{{__('ui.created')}}:
-                                {{$announcement->created_at->format('d/m/Y')}} --
+                                {{$announcement->created_at->format('d/m/Y')}} |
                                 {{$announcement->user->name}}
                             </small>
                         </p>
