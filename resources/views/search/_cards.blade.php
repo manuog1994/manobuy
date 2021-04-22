@@ -4,7 +4,13 @@
         <div class="card mb-3">
             <div class="row">
                 <div class="col-12 col-md-6 m-auto">
-                    @include('home._carousel')
+                    @if ($announcement->images->count() == 0)
+                    <img src="{{$announcement->img}}300" width="100%;" alt="{{$announcement->name}}">
+                    @else
+                    @foreach($announcement->images->take(1) as $image)
+                    <img src="{{$image->getUrl(300,300)}}" width="100%;" alt="{{$announcement->name}}">
+                    @endforeach
+                    @endif                
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
