@@ -78,7 +78,6 @@ class HomeController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'img' => 'nullable',
             'category_id' => 'required',
         ]);
             
@@ -90,7 +89,6 @@ class HomeController extends Controller
                 'description' => $request['description'],
                 'price' => $request['price'],
                 'category_id' => $request['category_id'],
-                'img' => $request['img'] = null, 
                 'user_id' => Auth::id()
         ]);
                 
@@ -111,12 +109,12 @@ class HomeController extends Controller
             dispatch(new ResizeImage(
                 $newFilePath,
                 300,
-                150
+                300
             ));
             dispatch(new ResizeImage(
                 $newFilePath,
                 500,
-                250
+                500
             ));
             dispatch(new ResizeImage(
                 $newFilePath,
@@ -131,8 +129,8 @@ class HomeController extends Controller
                 new GoogleVisionSafeSearchImage($i->id),
                 new GoogleVisionLabelImage($i->id),
                 new GoogleVisionRemoveFaces($i->id),
-                new ResizeImage($i->file, 300,150),
-                new ResizeImage($i->file, 500,250),
+                new ResizeImage($i->file, 300,300),
+                new ResizeImage($i->file, 500,500),
                 new ResizeImage($i->file, 800,500),
             ])->dispatch();
         }
@@ -140,7 +138,7 @@ class HomeController extends Controller
         File::deleteDirectory(storage_path("app/public/temp/{$uniqueSecret}"));
         
 
-        return redirect('/')->with('created', 'Su anuncio a sido creado con éxito, en unos minutos nuestros revisores aceptaran o rechazaran su anuncio');
+        return redirect('/')->with('created', __('ui.announcements'));
     }
 
     public function getImages(Request $request)
@@ -181,7 +179,7 @@ class HomeController extends Controller
         $user = Auth::user($userId);
 
         if(!$user)
-            return back()->with('errorLogin', 'No has iniciado sesión, inicia sesión y vuelve a la página.');
+            return back()->with('errorLogin', __('ui.errorLogin'));
 
         if($user->email_verified_at == null)
             return redirect(route('verification.notice'));

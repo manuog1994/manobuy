@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-5">
   <div class="col-6 m-auto text-center mt-3 card p-5">
     <h3 class="text-center mb-4">{{__('ui.myDates')}}</h3>
       <div class="form-outline mb-3">

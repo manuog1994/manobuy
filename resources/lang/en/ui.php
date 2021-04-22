@@ -90,4 +90,7 @@
         "reSend" => "Resend",
         "linkEmail" => "Your email has been successfully verified.",
         "verifyLink" => "Your link has been sent successfully.",
+        "announcements" => "
+        Your ad has been created successfully, in a few minutes our reviewers will accept or reject your ad.",
+        "errorLogin" => "You are not logged in, please log in and go back to the page.",
     ];

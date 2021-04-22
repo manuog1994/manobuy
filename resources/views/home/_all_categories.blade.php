@@ -1,4 +1,4 @@
-<div class="row mt-3 mb-5 m-auto d-none d-md-flex justify-content-around" style="max-width: 80%">
+<div class="row mt-3 mb-5 m-auto d-none d-md-flex justify-content-around" style="max-width: 1300px">
     <h2 class="text-center mb-5">{{__('ui.categories')}}</h2>
     @foreach($categories as $category)
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-2 div-img">

@@ -89,4 +89,6 @@
         "reSend" => "Invia di nuovo",
         "linkEmail" => "La tua email è stata verificata con successo.",
         "verifyLink" => "Il tuo collegamento è stato inviato con successo.",
+        "announcements" => "Il tuo annuncio è stato creato con successo, in pochi minuti i nostri revisori accetteranno o rifiuteranno il tuo annuncio.",
+        "errorLogin" => "Non sei loggato, effettua il login e torna alla pagina.",
     ];

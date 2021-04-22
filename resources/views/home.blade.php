@@ -12,8 +12,8 @@
         <p class=" text-body">{{__('ui.introduction')}}</p>
     </div>
 </header>
-@include('home._lastfiveannouncements')
 @include('home._all_categories')
+@include('home._lastfiveannouncements')
 
 <div class="row">
     <div class="col-12 mt-5 text-center">

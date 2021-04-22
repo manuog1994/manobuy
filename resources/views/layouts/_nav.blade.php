@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg my-nav shadow">
+<nav class="navbar navbar-expand-lg my-nav shadow fixed-top" style="position: sticky; top: 0;">
     <div class="container-fluid">
         @include('layouts.nav._logo')
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">

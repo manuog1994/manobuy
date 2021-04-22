@@ -4,11 +4,15 @@
         <div class="card mb-3">
             <div class="row">
                 <div class="col-12 col-md-6 m-auto">
+                    @if ($announcement->images->count() == 0)
+                    <img src="{{$announcement->img}}300" width="100%;" alt="{{$announcement->name}}">
+                    @else
                     @foreach($announcement->images->take(1) as $image)
-                    <img src="{{$image->getUrl(800,500)}}" width="100%;" alt="{{$announcement->name}}">
+                    <img src="{{$image->getUrl(300,300)}}" width="100%;" alt="{{$announcement->name}}">
                     @endforeach
+                    @endif
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 m-auto">
                     <div class="card-body">
                         <h5 class="card-title text-center mb-4">{{$announcement->name}}</h5>
                         <p class="card-text text-center">{{substr($announcement->description, 0, 50)}} <a

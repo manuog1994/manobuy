@@ -12,7 +12,6 @@ class AnnouncementImage extends Model
 {
     use HasFactory;
 
-
     protected $casts = [
         'labels'=>'array'
     ];

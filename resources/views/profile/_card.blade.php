@@ -1,12 +1,16 @@
 @foreach ($announcements->reverse() as $announcement)
 @if ($announcement->user_id == auth()->user()->id)
 <div class="col-12 col-md-4 mt-sm-0 d-flex justify-content-around my-cont m-auto" style="max-width: 800px">
-    <div class="card mb-3" style="max-width: 800px">
+    <div class="card mb-3 w-75" style="max-width: 800px">
         <div class="row">
             <div class="col-12 m-auto">
+                @if ($announcement->images->count() == 0)
+                <img src="{{$announcement->img}}300" width="100%;" alt="{{$announcement->name}}">
+                @else
                 @foreach($announcement->images->take(1) as $image)
-                <img src="{{$image->getUrl(800,500)}}" width="100%;" alt="{{$announcement->name}}">
+                <img src="{{$image->getUrl(500,500)}}" width="100%;" alt="{{$announcement->name}}">
                 @endforeach
+                @endif
             </div>
             <div class="col-12">
                 <div class="card-body">

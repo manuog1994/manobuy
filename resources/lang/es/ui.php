@@ -91,4 +91,6 @@
         "reSend" => "Reenviar",
         "linkEmail" => "Su correo electrónico ha sido verificado correctamente.",
         "verifyLink" => "Su enlace ha sido enviado correctamente.",
+        "announcements" => "Su anuncio a sido creado con éxito, en unos minutos nuestros revisores aceptaran o rechazaran su anuncio.",
+        "errorLogin" => "No has iniciado sesión, inicia sesión y vuelve a la página.",
     ];

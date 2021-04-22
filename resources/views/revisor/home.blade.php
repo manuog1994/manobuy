@@ -44,33 +44,43 @@
             </tr>
         </tbody>
     </table>
-    <div class="row">
-        @foreach ($announcement->images as $image)
+    <div class="row d-flex justify-content-around">
+        @if ($announcement->images->count() == 0)
         <div class="col-12 col-md-3 mt-2">
-            <img src="{{$image->getUrl(500,250)}}" width="100%;" alt="">
+            <img src="{{$announcement->img}}300" width="100%;" alt="{{$announcement->name}}">
         </div>
-        <div class="col-md-8">
+        @else
+        @foreach ($announcement->images as $image)
+        <div class="col-12 col-md-2 mt-2">
+            <img src="{{$image->getUrl(300,300)}}" width="100%;" alt="{{$announcement->name}}">
+        </div>
+        <div class="col-12 col-md-3">
+            <h6>Análisis</h6>
             <ul>
                 <li>{{__('ui.adult')}} : {{__("ui.{$image->adult}")}}</li>
                 <li>{{__('ui.spoof')}} : {{__("ui.{$image->spoof}")}}</li>
                 <li>{{__('ui.medical')}} : {{__("ui.{$image->medical}")}}</li>
                 <li>{{__('ui.violence')}} : {{__("ui.{$image->violence}")}}</li>
                 <li>{{__('ui.racy')}} : {{__("ui.{$image->racy}")}}</li>
-                <li>Id # : {{$image->id}}</li>
-                <li>{{__('ui.publicRoute')}} : {{$image->file}}</li>
-                <li>{{__('ui.storageRoute')}} : {{Storage::url($image->file)}}</li>
+                <li>Id image # : {{$image->id}}</li>
+{{--                 <li>{{__('ui.publicRoute')}} : {{$image->file}}</li>
+                <li>{{__('ui.storageRoute')}} : {{Storage::url($image->file)}}</li> --}}
             </ul>
-            <br>
+        </div>
+
+        <div class="col-12 col-md-4">
             <h6>Labels</h6>
             <ul class="mb-2">
                 @if ($image->labels)
-                    @foreach ($image->labels as $label)
-                        <li>{{$label}}</li>
-                    @endforeach
+                @foreach ($image->labels as $label)
+                <li>{{$label}}</li>
+                @endforeach
                 @endif
             </ul>
         </div>
         @endforeach
+        @endif
+
     </div>
 </div>
 <div class="row">

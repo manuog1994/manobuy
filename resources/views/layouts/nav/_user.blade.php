@@ -13,8 +13,8 @@
     </ul>
 </li>
 @if (Auth::user()->is_revisor)
-<li class="nav-item d-none d-lg-flex clearfix">
-    <a class="btn btn-info btn-rounded me-2" type="button" class="btn btn-primary"
+<li class="nav-item d-none d-lg-flex">
+    <a class="btn btn-info btn-rounded me-2 m-auto" type="button" class="btn btn-primary"
         href="{{route('revisor.home')}}">{{__('ui.revisorAds')}}<span
             class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
     </a>
