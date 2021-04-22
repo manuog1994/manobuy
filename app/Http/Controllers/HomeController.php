@@ -60,8 +60,7 @@ class HomeController extends Controller
 
     public function newAnnouncement(Request $request)
     {
-        $user = User::class;
-        if($user->email_verified_at == null)
+        if(auth()->user()->email_verified_at == null)
             return redirect(route('verification.notice'));
 
         $uniqueSecret = $request->old(
