@@ -82,4 +82,11 @@
         "newPassword" => "Nuova password",
         "confirmPassword" => "Conferma la tua nuova password",
         "selectLang" => "Seleziona la tua lingua",
+        "verifyEmail" => "Verifica email",
+        "notVerify" => "Non hai ancora verificato la tua email",
+        "introVerify1" => "Controlla la tua casella di posta e fai clic sul link per verificare la posta, se non la vedi controlla la casella di posta indesiderata.",
+        "introVerify2" => "Se non hai ricevuto l'e-mail o l'hai cancellata, fai clic sul pulsante.",
+        "reSend" => "Invia di nuovo",
+        "linkEmail" => "La tua email è stata verificata con successo.",
+        "verifyLink" => "Il tuo collegamento è stato inviato con successo.",
     ];

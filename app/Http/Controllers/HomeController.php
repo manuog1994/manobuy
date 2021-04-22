@@ -60,6 +60,10 @@ class HomeController extends Controller
 
     public function newAnnouncement(Request $request)
     {
+        $user = User::class;
+        if($user->email_verified_at == null)
+            return redirect(route('verification.notice'));
+
         $uniqueSecret = $request->old(
             'uniqueSecret',
             base_convert(sha1(uniqid(mt_rand())),16, 36)
@@ -179,6 +183,9 @@ class HomeController extends Controller
 
         if(!$user)
             return back()->with('errorLogin', 'No has iniciado sesión, inicia sesión y vuelve a la página.');
+
+        if($user->email_verified_at == null)
+            return redirect(route('verification.notice'));
             
 
         return view('profile', compact('user'));

@@ -6,6 +6,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\UserVerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ use App\Http\Controllers\ResetPasswordController;
     return view('welcome');
 }); */
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/profile/{userId}', [HomeController::class, 'userProfile'])->name('profile');
+Route::get('/profile/{userId}', [HomeController::class, 'userProfile'])->middleware('verified')->name('profile');
 
 Route::get('/announcements/new',[HomeController::class,'newAnnouncement'])->name('announcements.new');
 Route::post('/announcements/create',[HomeController::class,'create'])->name('announcements.create');
@@ -48,3 +49,7 @@ Route::get('/forgot-password', [ResetPasswordController::class, 'forgotView'])->
 Route::post('/forgot-password', [ResetPasswordController::class, 'forgotLink'])->middleware('guest')->name('password.email');
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'resetView'])->middleware('guest')->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'validationPass'])->middleware('guest')->name('password.update');
+
+Route::get('/email/verify', [UserVerificationController::class, 'verifyView'])->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [UserVerificationController::class, 'verifyRedirect'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::post('/email/verification-notification', [UserVerificationController::class, 'reVerify'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');

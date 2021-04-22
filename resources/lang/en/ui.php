@@ -83,4 +83,11 @@
         "newPassword" => "New password",
         "confirmPassword" => "Confirm your new password",
         "selectLang" => "Select your language",
+        "verifyEmail" => "Email verification",
+        "notVerify" => "You haven't verified your email yet",
+        "introVerify1" => "Please check your email inbox and click the link to verify email, if you don't see it check your Spam box.",
+        "introVerify2" => "If you have not received the email or have deleted it, please click the button.",
+        "reSend" => "Resend",
+        "linkEmail" => "Your email has been successfully verified.",
+        "verifyLink" => "Your link has been sent successfully.",
     ];

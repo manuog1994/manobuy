@@ -83,5 +83,12 @@
         "enterCredentials" => "Introduce tus credenciales",
         "newPassword" => "Nueva contraseña",
         "confirmNewPassword" => "Confirma tu nueva contraseña",
-        "selectLang" => "Selecciona tu idioma",  
+        "selectLang" => "Selecciona tu idioma",
+        "verifyEmail" => "Verificación correo electrónico",
+        "notVerify" => "No has verificado aún tu correo electrónico",
+        "introVerify1" => "Por favor revise la bandeja de entrada de su correo electrónico y haga click en enlace para verifir el correo electrónico, si no lo ve revise su bandeja de Spam.",
+        "introVerify2" => "Si no ha recibido el correo electrónico o lo ha borrado, por favor haga click en el botón.",
+        "reSend" => "Reenviar",
+        "linkEmail" => "Su correo electrónico ha sido verificado correctamente.",
+        "verifyLink" => "Su enlace ha sido enviado correctamente.",
     ];

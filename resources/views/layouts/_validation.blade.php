@@ -16,6 +16,12 @@
 @if (session('errorLogin'))
     <div class="alert alert-danger">{{session('errorLogin')}}</div>
 @endif
+@if (session('messageVerify'))
+    <div class="alert alert-success">{{session('messageVerify')}}</div>
+@endif
+@if (session('reMessage'))
+    <div class="alert alert-success">{{session('reMessage')}}</div>
+@endif
 
 @if ($errors->any())
     <div class="alert alert-danger">

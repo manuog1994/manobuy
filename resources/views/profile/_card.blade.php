@@ -1,14 +1,14 @@
 @foreach ($announcements->reverse() as $announcement)
 @if ($announcement->user_id == auth()->user()->id)
 <div class="col-12 col-md-4 mt-sm-0 d-flex justify-content-around my-cont m-auto" style="max-width: 800px">
-    <div class="card mb-3">
+    <div class="card mb-3" style="max-width: 800px">
         <div class="row">
-            <div class="col-12 col-md-6 m-auto">
+            <div class="col-12 m-auto">
                 @foreach($announcement->images->take(1) as $image)
                 <img src="{{$image->getUrl(800,500)}}" width="100%;" alt="{{$announcement->name}}">
                 @endforeach
             </div>
-            <div class="col-xxl-6">
+            <div class="col-12">
                 <div class="card-body">
                     <div class="d-flex">
                         <h5 class="card-title m-auto mb-4">{{$announcement->name}}</h5> 
@@ -34,7 +34,7 @@
                     </div>
                     <p class="card-text text-center mt-2">
                         <small class="text-muted">{{__('ui.created')}}:
-                            {{$announcement->created_at->format('d/m/Y')}} --
+                            {{$announcement->created_at->format('d/m/Y')}} |
                             {{$announcement->user->name}}
                         </small>
                     </p>
