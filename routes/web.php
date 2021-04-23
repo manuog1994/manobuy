@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
@@ -53,3 +55,29 @@ Route::post('/reset-password', [ResetPasswordController::class, 'validationPass'
 Route::get('/email/verify', [UserVerificationController::class, 'verifyView'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [UserVerificationController::class, 'verifyRedirect'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/email/verification-notification', [UserVerificationController::class, 'reVerify'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('google')->userFromTokenAndSecret($token, $secret);
+
+    // OAuth 2.0 providers...
+    $token = $user->token;
+    $refreshToken = $user->refreshToken;
+    $expiresIn = $user->expiresIn;
+
+    // OAuth 1.0 providers...
+    $token = $user->token;
+    $tokenSecret = $user->tokenSecret;
+
+    // All providers...
+    $user->getId();
+    $user->getNickname();
+    $user->getName();
+    $user->getEmail();
+    $user->getAvatar();
+});
+
+

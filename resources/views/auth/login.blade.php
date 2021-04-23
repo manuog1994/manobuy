@@ -20,4 +20,24 @@
   <div class="d-flex justify-content-center clearfix">
       <button type="submit" class="btn btn-info btn-rounded">{{__('ui.enter')}}</button>
   </div>
+    <!-- Register buttons -->
+    <div class="text-center mt-3 mb-3">
+      <p>Or not register?                        
+        <a class="" data-bs-target="#modal2" data-bs-toggle="modal"
+        data-bs-dismiss="modal" role="button">{{__('ui.register')}}</a></p>
+      <p>or sign up with:</p>
+      <button type="button" class="btn btn-primary btn-floating mx-1 disabled">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+      <a class="btn btn-primary btn-floating mx-1" href="/auth/redirect">
+        <i class="fab fa-google"></i>
+      </a>
+      <button type="button" class="btn btn-primary btn-floating mx-1 disabled">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button type="button" class="btn btn-primary btn-floating mx-1 disabled">
+        <i class="fab fa-github"></i>
+      </button>
+    </div>
 </form>

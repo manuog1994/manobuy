@@ -1,29 +1,26 @@
-<div class="row mt-3 mb-5 m-auto d-none d-md-flex justify-content-around" style="max-width: 1300px">
-    <h2 class="text-center mb-5">{{__('ui.categories')}}</h2>
-    @foreach($categories as $category)
-    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-2 div-img">
-        <a href="{{route('announcements.category', $category->id)}}">
-            <img src="{{$category->img}}" class="card img shadow" style="width: 95%;" alt="..."></a>
-        <p class="text">{{__("ui.{$category->name}")}}</p>
+<div class="row bg-image m-auto shadow p-3" style=" background-image: url('/categoriesImages/background-manobuy.jpg'); max-width: 1200px;">
+    <div class="col-12 text-center">
+        <h1 class="mt-2 text-dark" hidden>{{__('ui.welcome')}}<span class="iconNav"><i
+                    class="bi bi-megaphone p-1 rounded mt-2 ms-1 me-2 text-muted" hidden></i>Mano<span
+                    class="text-warning" hidden>Buy</span></span>
+        </h1>
+        <h2 class="mt-1 text-muted">{{__('ui.answer1')}}</h2>
     </div>
-    @endforeach
-</div>
-<div class="row d-md-none mt-5"> 
-    <h2 class="text-center mb-5">{{__('ui.categories')}}</h2>
-      <div class="splide" id="splideCategory">
+   <p class="text-body mb-5">{{__('ui.introduction')}}</p>
+    <div class="splide d-none d-md-flex" id="splideCategoryFull">
         <div class="splide__track">
             <ul class="splide__list">
-                @foreach($categories as $category)
+                @foreach($categories->reverse() as $category)
                 <li class="splide__slide">
-                    <div class="col-6 m-auto div-img">
+                    <div class="div-img">
                         <a href="{{route('announcements.category', $category->id)}}">
-                            <img src="{{$category->img}}" class="card img shadow w-100 m-auto" style="" alt="..."></a>
-                            <p class="text">{{__("ui.{$category->name}")}}</p>
+                            <img src="{{$category->img}}" class="card img shadow w-75" alt="{{$category->name}}"></a>
+                        <p class="text">{{__("ui.{$category->name}")}}</p>
                     </div>
                 </li>
                 @endforeach
             </ul>
         </div>
     </div>
-</div> 
+</div>
 

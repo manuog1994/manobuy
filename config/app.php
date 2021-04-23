@@ -170,6 +170,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
+        Spatie\CookieConsent\CookieConsentServiceProvider::class,
         /*
          * Application Service Providers...
          */

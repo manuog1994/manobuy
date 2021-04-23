@@ -5,7 +5,7 @@
         <label for="validationCustom04" class="form-label">{{__('ui.selectCategory')}}:</label>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category_id"
             id="validationCustom04" required>
-            <option selected>--{{__('ui.categories')}}--</option>
+            {{-- <option selected>--{{__('ui.categories')}}--</option> --}}
             @foreach ($categories as $mycategory)
             <option value="{{$mycategory->id}}" {{old('mycategory') == $mycategory->id ? 'selected' : ''}}>
                 {{__("ui.{$mycategory->name}")}}</option>

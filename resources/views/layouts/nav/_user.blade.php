@@ -6,18 +6,19 @@
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
         <span class="dropdown-item bg-info fw-bold">{{__('ui.salute')}}{{Auth::user()->name}}</span>
         <a class="my-link dropdown-item" href="{{route('profile', auth()->user()->id)}}">{{__('ui.myprofile')}}</a>
+        @if (Auth::user()->is_revisor)
+        <li class="nav-item d-none d-lg-flex">
+            <a class="dropdown-item me-2 m-auto" type="button" class="btn btn-primary"
+                href="{{route('revisor.home')}}">{{__('ui.revisorAds')}}<span
+                class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+            </a>
+        </li>
+        @endif
         <form action="{{route('logout')}}" method="POST">
             @csrf
             <button class="dropdown-item" type="submit">{{__('ui.logout')}}</button>
         </form>
     </ul>
 </li>
-@if (Auth::user()->is_revisor)
-<li class="nav-item d-none d-lg-flex">
-    <a class="btn btn-info btn-rounded me-2 m-auto" type="button" class="btn btn-primary"
-        href="{{route('revisor.home')}}">{{__('ui.revisorAds')}}<span
-            class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
-    </a>
-</li>
-@endif
+
 @endauth

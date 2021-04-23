@@ -170,7 +170,7 @@ class HomeController extends Controller
         $q = $request->input('q');
         $announcements = Announcement::search($q)
             ->where('is_accepted', true)
-            ->get();
+            ->paginate(10);
         return view('search_results', compact('q', 'announcements'));
     } 
 
@@ -187,5 +187,6 @@ class HomeController extends Controller
 
         return view('profile', compact('user'));
     }
+
      
 }

@@ -14,7 +14,9 @@
         "laravel/framework": "^8.12",
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.6",
+        "socialiteproviders/google": "^4.1",
         "spatie/image": "^1.10",
+        "spatie/laravel-cookie-consent": "^3.0",
         "teamtnt/laravel-scout-tntsearch-driver": "^11.2"
     },
     "require-dev": {

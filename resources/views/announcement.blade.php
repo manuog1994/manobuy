@@ -7,7 +7,9 @@
 @endif
 @endforeach
 @section('content')
-@include('announcements._selector')
+<header class="row text-center">
+    @include('announcements._categoriesSlide')
+</header>
 <div class="row">
     <div class="col-12 text-center mt-5 mb-5">
         <h1>{{__('ui.allAnnouncementCategory')}}

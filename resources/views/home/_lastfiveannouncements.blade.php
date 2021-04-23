@@ -3,8 +3,8 @@
         <h2>{{__('ui.lastAnnouncements')}}</h2>
     </div>
 </div>
-<div class="d-lg-none row">
-    <div class="splide" id="">
+<div class="row">
+    <div class="splide d-md-none" id="splide">
         <div class="splide__track">
             <ul class="splide__list">
                 @foreach ($announcements->reverse()->take(5) as $key => $announcement)
@@ -16,8 +16,8 @@
         </div>
     </div>
 </div>
-<div class="d-none d-lg-block row m-auto" style="max-width: 1200px">
-    <div class="splide" id="splide">
+<div class="d-none d-md-flex row m-auto" style="max-width: 1200px">
+    <div class="splide" id="splideAds">
         <div class="splide__track">
             <ul class="splide__list">
                 @foreach ($announcements->reverse()->take(5) as $key => $announcement)
