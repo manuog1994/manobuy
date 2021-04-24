@@ -61,7 +61,7 @@ Route::get('/auth/redirect', function () {
 });
 
 Route::get('/auth/callback', function () {
-    $user = Socialite::driver('github')->userFromToken($token);
+    $user = Socialite::driver('google')->userFromToken($token);
 
     // OAuth 2.0 providers...
     $token = $user->token;
