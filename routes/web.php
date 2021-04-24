@@ -61,13 +61,13 @@ Route::get('/auth/redirect', function () {
 });
 
 Route::get('/auth/callback', function () {
+    $user = Socialite::driver('google')->user();
 
     // OAuth 2.0 providers...
     $token = $user->token;
     $refreshToken = $user->refreshToken;
     $expiresIn = $user->expiresIn;
 
-    $user = Socialite::driver('google')->userFromToken($token);
 
     // All providers...
     $user->getId();
@@ -76,6 +76,7 @@ Route::get('/auth/callback', function () {
     $user->getEmail();
     $user->getAvatar();
 
+    $user = Socialite::driver('google')->userFromToken($token);
 
 });
 
