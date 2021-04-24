@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserVerificationController;
@@ -56,28 +56,9 @@ Route::get('/email/verify', [UserVerificationController::class, 'verifyView'])->
 Route::get('/email/verify/{id}/{hash}', [UserVerificationController::class, 'verifyRedirect'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/email/verification-notification', [UserVerificationController::class, 'reVerify'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
-});
+Route::get('/auth/redirect', [SocialiteController::class, 'redirectSocialite']);
+Route::get('/auth/callback', [SocialiteController::class, 'callbackSocialite']);
 
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('google')->user();
-
-    // OAuth 2.0 providers...
-    $token = $user->token;
-    $refreshToken = $user->refreshToken;
-    $expiresIn = $user->expiresIn;
-
-
-    // All providers...
-    $user->getId();
-    $user->getNickname();
-    $user->getName();
-    $user->getEmail();
-    $user->getAvatar();
-
-    $user = Socialite::driver('google')->userFromToken($token);
-
-});
-
+Route::get('/auth/redirect-facebook', [SocialiteController::class, 'redirectFacebook']);
+Route::get('/auth/callback-facebook', [SocialiteController::class, 'callbackFacebook']);
 

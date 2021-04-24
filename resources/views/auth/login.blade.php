@@ -26,9 +26,9 @@
         <a class="" data-bs-target="#modal2" data-bs-toggle="modal"
         data-bs-dismiss="modal" role="button">{{__('ui.register')}}</a></p>
       <p>or sign up with:</p>
-      <button type="button" class="btn btn-primary btn-floating mx-1 disabled">
-        <i class="fab fa-facebook-f"></i>
-      </button>
+      <a class="btn btn-primary btn-floating mx-1" href="/auth/redirect-facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
       <a class="btn btn-primary btn-floating mx-1" href="/auth/redirect">
         <i class="fab fa-google"></i>
       </a>
