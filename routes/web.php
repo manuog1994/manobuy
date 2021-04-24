@@ -67,6 +67,8 @@ Route::get('/auth/callback', function () {
     $refreshToken = $user->refreshToken;
     $expiresIn = $user->expiresIn;
 
+    $user = Socialite::driver('google')->userFromToken($token);
+
     // All providers...
     $user->getId();
     $user->getNickname();
@@ -74,7 +76,6 @@ Route::get('/auth/callback', function () {
     $user->getEmail();
     $user->getAvatar();
 
-    $user = Socialite::driver('google')->userFromToken($token);
 
 });
 
