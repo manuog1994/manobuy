@@ -1,17 +1,42 @@
-<div id="secondary-slider" class="splide">
-	<div class="splide__track">
-		<ul class="splide__list">
-            @if ($announcement->images->count() == 0)
-            <li class="splide__slide text-center">
-                <img src="{{$announcement->img}}500" style="max-width: 800px" alt="{{$announcement->name}}">
-            </li>
-            @else
-            @foreach ($announcement->images as $image)
-            <li class="splide__slide text-center">
-                <img src="{{$image->getUrl(800,500)}}" class=" w-75" style="max-width: 800px" alt="..." >
-            </li>
-            @endforeach
-            @endif
-        </ul>
-	</div>
+{{-- <div class="swiper-containerd">
+    <div class="swiper-wrapper">
+        @if($announcement->images->count() == 0)
+            <div class="swiper-slide" style="background-image: url({{$announcement->img}}500)"></div>
+@else
+@foreach($announcement->images as $image)
+<div class="swiper-slide" style="background-image: url({{$image->getUrl(800,500)}})"></div>
+@endforeach
+@endif
+
+</div>
+<!-- Add Pagination -->
+<div class="swiper-pagination"></div>
+<!-- Add Arrows -->
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div> --}}
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @if($announcement->images->count() == 0)
+        <div class="carousel-item @if($loop->first) active @endif">
+            <img src="{{$announcement->img}}500" class="d-block w-100" alt="...">
+        </div>        
+        @else
+        @foreach($announcement->images as $image)
+        <div class="carousel-item active">
+            <img src="{{$image->getUrl(800,500)}}" class="d-block w-100" alt="...">
+        </div>        
+        @endforeach
+        @endif
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>

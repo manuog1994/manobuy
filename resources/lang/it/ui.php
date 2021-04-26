@@ -18,8 +18,8 @@
         "newAnnouncement" => "Crea Annuncio",
         "register" => "Iscriviti",
         "auth" => "Autenticazione",
-        "notRegister" => "Se non sei ancora registrato, registrati",
-        "user" => "Oppure, se sei registrato, effettua il login",
+        "notRegister" => "Oppure non sei registrato?",
+        "user" => "Login",
         "email" => "E-mail",
         "inputEmail" => "Inserisci la tua email",
         "password" => "Password",
@@ -91,4 +91,7 @@
         "verifyLink" => "Il tuo collegamento è stato inviato con successo.",
         "announcements" => "Il tuo annuncio è stato creato con successo, in pochi minuti i nostri revisori accetteranno o rifiuteranno il tuo annuncio.",
         "errorLogin" => "Non sei loggato, effettua il login e torna alla pagina.",
+        "orRegister" => "o iscriviti con:",
+        "formRegister" => "Modulo di registrazione",
+        "alertUser" => "Sei già registrato, se hai dimenticato la password clicca sul link",
     ];

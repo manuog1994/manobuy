@@ -8,16 +8,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
+    @yield('style')
 </head>
 <body>
-    @include('layouts._nav')
     @include('layouts._validation')
+    @include('layouts._nav')
     <div class="container-fluid" style="min-height: 80vh;">
         @yield('content')
     </div>
     @include('layouts._footer')
     @include('cookie-consent::index')
     <script src="{{mix('js/app.js')}}"></script>
+    @yield('script')
 </body>
 
 @include('auth._modals')

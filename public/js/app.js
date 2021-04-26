@@ -10995,6 +10995,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.default('.swiper-containerd', {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
 
 /***/ }),
 

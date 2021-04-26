@@ -22,22 +22,15 @@
   </div>
     <!-- Register buttons -->
     <div class="text-center mt-3 mb-3">
-      <p>Or not register?                        
+      <p>{{__('ui.notRegister')}}                        
         <a class="" data-bs-target="#modal2" data-bs-toggle="modal"
         data-bs-dismiss="modal" role="button">{{__('ui.register')}}</a></p>
-      <p>or sign up with:</p>
-      <a class="btn btn-primary btn-floating mx-1" href="/auth/redirect-facebook">
+      <p>{{__('ui.orRegister')}}</p>
+      <a class="btn btn-primary btn-floating mx-1 fs-5" href="/auth/redirect-facebook">
         <i class="fab fa-facebook"></i>
       </a>
-      <a class="btn btn-primary btn-floating mx-1" href="/auth/redirect">
+      <a class="btn btn-primary btn-floating mx-1 fs-5" href="/auth/redirect">
         <i class="fab fa-google"></i>
       </a>
-      <button type="button" class="btn btn-primary btn-floating mx-1 disabled">
-        <i class="fab fa-twitter"></i>
-      </button>
-  
-      <button type="button" class="btn btn-primary btn-floating mx-1 disabled">
-        <i class="fab fa-github"></i>
-      </button>
     </div>
 </form>

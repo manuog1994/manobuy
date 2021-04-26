@@ -17,11 +17,14 @@ class SocialiteController extends Controller
         try {
         
             $user = Socialite::driver('google')->user();
-     
+            
+            if(!User::where('google_id', $user->id)->first())
+            return redirect(route('home'))->with('alerta', __('ui.alertUser'));
+            
             $finduser = User::where('google_id', $user->id)->first();
-       
+
             if($finduser){
-     
+                
                 Auth::login($finduser);
 
                 if($finduser->email_verified_at == null)
@@ -54,6 +57,9 @@ class SocialiteController extends Controller
         try {
         
             $user = Socialite::driver('facebook')->user();
+
+            if(!User::where('facebook_id', $user->id)->first())
+            return redirect(route('home'))->with('alerta', __('ui.alertUser'));
  
             $finduser = User::where('facebook_id', $user->id)->first();
 

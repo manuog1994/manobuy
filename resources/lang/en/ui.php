@@ -18,8 +18,8 @@
         "newAnnouncement" => "Create Announcement",
         "register" => "Register",
         "auth" => "Authentication",
-        "notRegister" => "If you are not registered yet, register",
-        "user" => "Or if you are registered, log in",
+        "notRegister" => "Or you're not register?",
+        "user" => "Login",
         "email" => "Email",
         "inputEmail" => "Enter your email",
         "password" => "Password",
@@ -93,4 +93,7 @@
         "announcements" => "
         Your ad has been created successfully, in a few minutes our reviewers will accept or reject your ad.",
         "errorLogin" => "You are not logged in, please log in and go back to the page.",
+        "orRegister" => "or sign up with:",
+        "formRegister" => "Registration Form",
+        "alertUser" => "You are already registered, if you have forgotten the password click on the link",
     ];
