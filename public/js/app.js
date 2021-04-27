@@ -10978,7 +10978,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
  // init Swiper:
 
-document.addEventListener('DOMContentLoaded', function () {
+if (document.getElementsByClassName('swiper-container')) {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.default('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -10994,23 +10994,26 @@ document.addEventListener('DOMContentLoaded', function () {
       prevEl: '.swiper-button-prev'
     }
   });
-});
-var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.default('.swiper-containerd', {
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }
-});
+}
+
+if (document.getElementsByClassName('swiper-containerd')) {
+  var _swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.default('.swiper-containerd', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+}
 
 /***/ }),
 
@@ -11026,23 +11029,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_splidejs_splide__WEBPACK_IMPORTED_MODULE_0__);
 /* SPLIDE JS */
 
-document.addEventListener('DOMContentLoaded', function () {
+
+if (document.getElementById('splideAds')) {
   new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splideAds', {
     type: 'loop',
     perPage: 3,
     focus: 'center'
   }).mount();
+}
+
+;
+
+if (document.getElementById('splide')) {
   new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splide', {
     type: 'loop',
     perPage: 1,
     focus: 'center'
   }).mount();
+}
+
+;
+
+if (document.getElementById('splideCategoryFull')) {
   new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splideCategoryFull', {
     type: 'loop',
     perPage: 5,
     focus: 'center'
   }).mount();
-});
+}
+
+;
 
 /***/ }),
 

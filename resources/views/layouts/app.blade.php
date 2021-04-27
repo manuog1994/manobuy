@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
-    @yield('style')
+    @stack('style')
 </head>
 <body>
     @include('layouts._validation')
@@ -25,5 +25,9 @@
 @include('auth._modals')
 @include('announcements._contact_modal')
 @include('layouts.nav._modalLang')
+@include('policities._modalPrivacity')
+@include('policities._modalCookies')
+@include('information._contactForm')
+
 
 </html>

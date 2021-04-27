@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\AnnouncementController;
@@ -61,4 +62,6 @@ Route::get('/auth/callback', [SocialiteController::class, 'callbackSocialite']);
 
 Route::get('/auth/redirect-facebook', [SocialiteController::class, 'redirectFacebook']);
 Route::get('/auth/callback-facebook', [SocialiteController::class, 'callbackFacebook']);
+
+Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 

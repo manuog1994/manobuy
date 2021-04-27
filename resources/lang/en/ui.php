@@ -96,4 +96,10 @@
         "orRegister" => "or sign up with:",
         "formRegister" => "Registration Form",
         "alertUser" => "You are already registered, if you have forgotten the password click on the link",
+        "login" => "Login",
+        "privatePolicities" => "Private policities",
+        "cookies" => "Cookies policities",
+        "contact" => "Contact Us",
+        "informationContact" => "Contact",
+        "contactForm" => "Contact Form",
     ];

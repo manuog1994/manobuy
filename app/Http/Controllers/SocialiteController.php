@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
+use App\Mail\NewUserReceived;
+use App\Mail\NewUserSendReceived;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
@@ -18,8 +21,8 @@ class SocialiteController extends Controller
         
             $user = Socialite::driver('google')->user();
             
-            if(!User::where('google_id', $user->id)->first())
-            return redirect(route('home'))->with('alerta', __('ui.alertUser'));
+/*             if(!User::where('google_id', $user->id)->first())
+            return redirect(route('home'))->with('alerta', __('ui.alertUser')); */
             
             $finduser = User::where('google_id', $user->id)->first();
 
@@ -39,10 +42,11 @@ class SocialiteController extends Controller
                     'google_id'=> $user->id,
                     'password' => encrypt('123456dummy')
                 ]);
-    
-                Auth::login($newUser);
+
+                Mail::to('manuelortegagaliano@gmail.com')->send(new NewUserReceived($newUser));
+                Mail::to($newUser['email'])->send(new NewUserSendReceived($newUser));
      
-                return redirect('/');
+                return redirect('/')->with('nuevo', 'Tu usuario ha sido registrado correctamente');;
             }
     
         } catch (Exception $e) {
@@ -58,8 +62,8 @@ class SocialiteController extends Controller
         
             $user = Socialite::driver('facebook')->user();
 
-            if(!User::where('facebook_id', $user->id)->first())
-            return redirect(route('home'))->with('alerta', __('ui.alertUser'));
+/*             if(!User::where('facebook_id', $user->id)->first())
+            return redirect(route('home'))->with('alerta', __('ui.alertUser')); */
  
             $finduser = User::where('facebook_id', $user->id)->first();
 
@@ -79,10 +83,12 @@ class SocialiteController extends Controller
                     'facebook_id'=> $user->id,
                     'password' => encrypt('123456dummy')
                 ]);
-    
                 Auth::login($newUser);
+
+                Mail::to('manuelortegagaliano@gmail.com')->send(new NewUserReceived($newUser));
+                Mail::to($newUser['email'])->send(new NewUserSendReceived($newUser));
      
-                return redirect('/');
+                return redirect('/')->with('nuevo', 'Tu usuario ha sido registrado correctamente');
             }
     
         } catch (Exception $e) {

@@ -94,4 +94,10 @@
         "orRegister" => "o iscriviti con:",
         "formRegister" => "Modulo di registrazione",
         "alertUser" => "Sei già registrato, se hai dimenticato la password clicca sul link",
+        "login" => "Accesso",
+        "privatePolicities" => "politica sulla riservatezza",
+        "cookies" => "Politica sui cookie",
+        "contact" => "Contattaci",
+        "informationContact" => "Contatto",
+        "contactForm" => "Modulo di Contatto",
     ];

@@ -1,9 +1,8 @@
 import Swiper from 'swiper/bundle';
 
   // init Swiper:
-
-document.addEventListener( 'DOMContentLoaded', function () {
-  var swiper = new Swiper('.swiper-container', {
+if(document.getElementsByClassName('swiper-container')){
+  let swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 30,
     slidesPerGroup: 3,
@@ -18,22 +17,25 @@ document.addEventListener( 'DOMContentLoaded', function () {
       prevEl: '.swiper-button-prev',
     },
   });
-} );
+}
 
-var swiper = new Swiper('.swiper-containerd', {
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
+if(document.getElementsByClassName('swiper-containerd')){
+  let swiper = new Swiper('.swiper-containerd', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
+
 
