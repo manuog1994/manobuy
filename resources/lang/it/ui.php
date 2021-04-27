@@ -1,7 +1,7 @@
 <?php 
 
     return [
-        "titlepage" => "Vendilo a ManoBuy ",
+        "titlepage" => "ManoBuy -- Annunci di seconda mano, vendita e acquisto.",
         "welcome" => "Bienvenuto a ",
         "answer1" => "Che cosa sta cercando?",
         "introduction" => "Cercalo nelle categorie, lì troverai il prodotto che desideri e potrai vedere gli annunci.",

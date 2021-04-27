@@ -5,6 +5,9 @@
     style="background-image: url('/categoriesImages/hand-shake-on-yellow.jpg'); padding-bottom: 10px;">
     @include('home._all_categories')
 </header>
+<header class="row shadow text-center d-md-none">
+    @include('home._categoriesSlide')
+</header>
 @include('home._lastfiveannouncements')
 <div class="row">
     <div class="col-12 mt-5 text-center">
@@ -12,11 +15,7 @@
         <p class="text-muted">{{__('ui.introduction2')}}</p>
     </div>
 </div>
-{{-- <script>
-    window.onload = function(){
-        alert('Atención!! Esto es una página de test ningún contenido dentro de ella es real.')
-    }
-</script> --}}
+
 @endsection
 
 

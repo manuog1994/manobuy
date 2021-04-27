@@ -20,6 +20,10 @@ if(document.getElementsByClassName('swiper-container')){
 }
 
 if(document.getElementsByClassName('swiper-containerd')){
+  let swiper = new Swiper('.swiper-containerCategories');
+}
+
+if(document.getElementsByClassName('swiper-containerd')){
   let swiper = new Swiper('.swiper-containerd', {
     spaceBetween: 30,
     centeredSlides: true,

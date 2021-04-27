@@ -1,4 +1,5 @@
-<div class="row bg-image shadow m-auto" style=" background-image: url('/categoriesImages/background-manobuy.jpg'); max-width:1200px;">
+{{-- Display --}}
+<div class="row bg-image shadow m-auto d-none d-md-flex" style=" background-image: url('/categoriesImages/background-manobuy.jpg'); max-width:1200px;">
     <div class="col-12">
         <h2>{{__('ui.categories')}}</h2>
     </div>
@@ -24,3 +25,7 @@
         </div>
     </div>
 </div>
+
+{{-- Mobile --}}
+@include('home._categoriesSlide')
+

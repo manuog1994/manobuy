@@ -9,6 +9,14 @@ if(document.getElementById('splideAds')){
 	} ).mount();
 
 };
+if(document.getElementById('splideCategoriesMobile')){
+	new Splide( '#splideCategoriesMobile', {
+		type   : 'loop',
+		perPage: 1,
+		focus  : 'center',
+	} ).mount();
+
+};
 if(document.getElementById('splide')){
 	new Splide( '#splide', {
 		type   : 'loop',

@@ -4,9 +4,9 @@
                     class="bi bi-megaphone p-1 rounded mt-2 ms-1 me-2 text-muted" hidden></i>Mano<span
                     class="text-warning" hidden>Buy</span></span>
         </h1>
-        <h2 class="mt-1 text-muted">{{__('ui.answer1')}}</h2>
+        <h2 class="mt-1 text-muted d-none d-md-block">{{__('ui.answer1')}}</h2>
     </div>
-   <p class="text-body mb-5">{{__('ui.introduction')}}</p>
+   <p class="text-body mb-5 d-none d-md-block">{{__('ui.introduction')}}</p>
     <div class="splide d-none d-md-flex" id="splideCategoryFull">
         <div class="splide__track">
             <ul class="splide__list">

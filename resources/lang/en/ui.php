@@ -1,7 +1,7 @@
 <?php 
 
     return [
-        "titlepage" => "Sell ​​it at ManoBuy ",
+        "titlepage" => "ManoBuy -- Secondhand ads, sell and buy.",
         "welcome" => "Welcome to ",
         "answer1" => "What're you looking for?",
         "introduction" => "Look for it within the categories, there you will find the product you want and you will be able to see the ads.",
