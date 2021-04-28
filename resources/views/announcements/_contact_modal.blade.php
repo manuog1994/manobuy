@@ -8,18 +8,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 @foreach ($announcements as $announcement)
-                @if ($announcement->id == Route::current()->id)
-                @auth
-                <div class="mb-3">
-                    <img class="circleProfileNav" src="
-                    @if(auth()->user()->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
-                    {{auth()->user()->imgProfile}}"
+                @if ($announcement->id == Route::current()->id)                    
+                <div class="hoverButton">
+                    <img class="circleProfile" src="
+                    @if($announcement->user->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
+                    {{$announcement->user->imgProfile}}"
                     @else
-                    /images/{{auth()->user()->imgProfile}}"
+                    /images/{{$announcement->user->imgProfile}}"
                     @endif    
-                    alt="{{auth()->user()->name}}">
-                </div>        
-                @endauth
+                    alt="{{$announcement->user->name}}">
+                </div>
                 <div class="m-auto">
                     <p>{{__('ui.name')}}{{$announcement->user->name}}</p>
                     <p>{{__('ui.phone')}}{{$announcement->user->phone}}</p>
