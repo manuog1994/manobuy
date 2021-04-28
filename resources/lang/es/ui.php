@@ -102,4 +102,8 @@
         "contact" => "Contacta con nosotros",
         "informationContact" => "Contactar",
         "contactForm" => "Formulario de contacto",
+        "legal" => "Legal",
+        "modif" => "Modificar",
+        "info" => "Información",
+        "myAccount" => "Mi Cuenta",
     ];

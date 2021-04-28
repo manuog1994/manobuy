@@ -1,7 +1,15 @@
 @auth
 <li class="nav-item dropdown my-li d-none d-lg-flex">
-    <button type="button" class="btn shadow-none dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-        <i class="bi bi-person-circle text-white my-iconsize"></i>
+    <button type="button" class="btn shadow-none" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+        <div class="">
+            <img class="circleProfileNav" src="
+            @if(auth()->user()->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
+            {{auth()->user()->imgProfile}}"
+            @else
+            /images/{{auth()->user()->imgProfile}}"
+            @endif    
+            alt="{{auth()->user()->name}}">
+        </div>
     </button>
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
         <span class="dropdown-item bg-info fw-bold">{{__('ui.salute')}}{{Auth::user()->name}}</span>

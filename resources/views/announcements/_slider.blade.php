@@ -1,8 +1,8 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         @if($announcement->images->count() == 0)
-        <div class="carousel-item">
-            <img src="{{$announcement->img}}500" class="d-block w-100" alt="...">
+        <div class="carousel-item active">
+            <img src="{{$announcement->img}}500" class="d-block w-50 m-auto" alt="{{$announcement->name}}">
         </div>
         @else
         @foreach($announcement->images as $image)
