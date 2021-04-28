@@ -100,4 +100,8 @@
         "contact" => "Contattaci",
         "informationContact" => "Contatto",
         "contactForm" => "Modulo di Contatto",
+        "legal" => "Legale",
+        "modif" => "Update",
+        "info" => "Informazione",
+        "myAccount" => "Il mio conto",
     ];

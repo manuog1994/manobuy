@@ -14,6 +14,6 @@
         <label class="form-label" for="typePhone">{{__('ui.phone')}}</label>
     </div>
     <div class="mb-3">
-        <button class="btn btn-info rounded-pill">Modificar</button>
+        <button class="btn btn-info rounded-pill">{{__('ui.modif')}}</button>
     </div>
 </form>

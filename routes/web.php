@@ -10,6 +10,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserVerificationController;
+use App\Http\Controllers\UploadProfileImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,4 +65,7 @@ Route::get('/auth/redirect-facebook', [SocialiteController::class, 'redirectFace
 Route::get('/auth/callback-facebook', [SocialiteController::class, 'callbackFacebook']);
 
 Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
+
+Route::post('/image-profile/{id}', [UploadProfileImageController::class, 'uploadImage'])->name('upload.image');
+
 

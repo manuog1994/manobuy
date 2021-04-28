@@ -6,7 +6,7 @@
             </p>
         </div>
         <div class="col-12 col-md-2 mt-3 text-center">
-            <p class="text-muted text-decoration-underline m-0">Mi Cuenta</p>
+            <p class="text-muted text-decoration-underline m-0">{{__('ui.myAccount')}}</p>
             <ul class="p-0" style="font-size: 14px;">
                 <li class="" style="list-style: none">
                     <a id="dropActivacion" class="text-muted" @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}" @else type="button" href="{{route('announcements.new')}}" @endif>{{__('ui.newAnnouncement')}}
@@ -31,7 +31,7 @@
         </div>
     
         <div class="col-12 col-md-2 mt-3 text-center">
-            <p class="text-muted text-decoration-underline m-0">Legal</p>
+            <p class="text-muted text-decoration-underline m-0">{{__('ui.legal')}}</p>
             <ul class="p-0" style="font-size: 14px;">
                 <li class="" style="list-style: none">
                     <a class="text-muted" data-bs-toggle="modal" data-bs-target="#policities" role="button">{{__('ui.privatePolicities')}}</a>
@@ -42,7 +42,7 @@
             </ul>
         </div>
         <div class="col-12 col-md-2 mt-3 text-center">
-            <p class="text-muted text-decoration-underline m-0">Información</p>
+            <p class="text-muted text-decoration-underline m-0">{{__('ui.info')}}</p>
             <ul class="p-0" style="font-size: 14px;">
                 <li class="" style="list-style: none">
                     <a class="text-muted" data-bs-toggle="modal" data-bs-target="#contact" role="button">{{__('ui.contact')}}</a>
@@ -62,15 +62,25 @@
 <footer class="text-center text-white fixed-bottom d-md-none" style="background-color: #5e5e5e;">
     <!-- Grid container -->
     <div class="container p-2 d-flex justify-content-around">
-        <a id="dropActivacion" class="" 
+        <a id="dropActivacion" class="d-flex align-self-center" 
         @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" 
         @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}"
         @else
         href="{{route('profile', auth()->user()->id)}}"
         @endif>
-        <i class="bi bi-person-circle text-white my-iconsize"></i>
+        @auth
+        <div >
+            <img class="circleProfileFooter" src="
+            @if(auth()->user()->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
+            {{auth()->user()->imgProfile}}"
+            @else
+            /images/{{auth()->user()->imgProfile}}"
+            @endif    
+            alt="{{auth()->user()->name}}">
+        </div>        
+        @endauth    
         </a>
-        <a id="dropActivacion" class="" 
+        <a id="dropActivacion" class="d-flex align-self-center" 
         @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button"
         @elseif(Auth::user()->email_verified_at == null)
         type="button" href="{{route('verification.notice')}}" 
@@ -80,9 +90,9 @@
         </a>
         @auth
         @if (Auth::user()->is_revisor)
-        <a class="" type="button"
+        <a class="d-flex align-self-center" type="button"
         href="{{route('revisor.home')}}"><i class="bi bi-binoculars text-white my-iconsize"></i><span
-        class="badge bg-light text-dark"> {{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+        class="badge bg-light text-dark m-auto ms-1">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
         </a>
         @endif
         @endauth

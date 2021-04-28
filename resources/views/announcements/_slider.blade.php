@@ -4,8 +4,13 @@
 @foreach($announcement->images as $image)
 
         @if($announcement->images->count() == 0)
+<<<<<<< HEAD
         <div class="carousel-item @if($loop->first) active @endif">
             <img src="{{$announcement->img}}500" class="d-block w-100" alt="...">
+=======
+        <div class="carousel-item active">
+            <img src="{{$announcement->img}}500" class="d-block w-50 m-auto" alt="{{$announcement->name}}">
+>>>>>>> 6fcd585a279d3c1bd0b5136903d4fabc2cb9cffc
         </div>
 
 @endforeach

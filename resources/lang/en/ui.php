@@ -102,4 +102,9 @@
         "contact" => "Contact Us",
         "informationContact" => "Contact",
         "contactForm" => "Contact Form",
+        "legal" => "Legal",
+        "modif" => "Update",
+        "info" => "Information",
+        "myAccount" => "My Account",
+
     ];

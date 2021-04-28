@@ -5,11 +5,19 @@
 {{$announcement->name}} - ManoBuy
 @endsection
 @section('content')
-<div class="row mt-5 align-content-center">
+<div class="row mt-md-5 mt-2 align-content-center">
     <div class="card m-0 p-2 shadow bg-light-gray m-auto" style="max-width: 1000px">
         <div class="d-flex justify-content-between m-3">
             <div class="d-flex">
-                <img class="circleProfile ms-3" src="https://images.unsplash.com/photo-1571929232190-30f765788262?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1070&q=80" alt="profile {{$announcement->user->name}}">
+                <div class="hoverButton">
+                    <img class="circleProfile" src="
+                    @if(auth()->user()->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
+                    {{auth()->user()->imgProfile}}"
+                    @else
+                    /images/{{auth()->user()->imgProfile}}"
+                    @endif    
+                    alt="{{auth()->user()->name}}">
+                </div>
                 <div class="ms-2">
                     <p class="m-0">{{$announcement->user->name}}</p>
                     <p class="fontsize-12">{{__('ui.created')}}: {{$announcement->created_at->format('d/m/Y')}}</p>

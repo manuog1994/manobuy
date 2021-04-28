@@ -42,7 +42,8 @@ class SocialiteController extends Controller
                     'google_id'=> $user->id,
                     'password' => encrypt('123456dummy')
                 ]);
-
+                Auth::login($newUser);
+                
                 Mail::to('manuelortegagaliano@gmail.com')->send(new NewUserReceived($newUser));
                 Mail::to($newUser['email'])->send(new NewUserSendReceived($newUser));
      

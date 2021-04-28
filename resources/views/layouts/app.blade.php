@@ -28,6 +28,7 @@
 @include('policities._modalPrivacity')
 @include('policities._modalCookies')
 @include('information._contactForm')
+@include('profile._modalUpload')
 
 
 </html>
