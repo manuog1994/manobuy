@@ -68,17 +68,20 @@
         @else
         href="{{route('profile', auth()->user()->id)}}"
         @endif>
-        @foreach ($announcements as $announcement)
-        <div >
-            <img class="circleProfileFooter" src="
-            @if($announcement->user->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
-            {{$announcement->user->imgProfile}}"
-            @else
-            /images/{{$announcement->user->imgProfile}}"
-            @endif    
-            alt="{{$announcement->user->name}}">
-        </div>        
-        @endforeach
+        @guest
+        <i class="bi bi-person-circle text-white my-iconsize"></i>
+        @endguest
+        @auth
+            <div >
+                <img class="circleProfileFooter" src=
+                    @if(auth()->user()->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
+                        "{{auth()->user()->imgProfile}}"
+                    @else
+                        "/images/{{auth()->user()->imgProfile}}" 
+                    @endif    
+                    alt="{{auth()->user()->name}}">
+            </div>        
+        @endauth
         </a>
         <a id="dropActivacion" class="d-flex align-self-center" 
         @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button"
