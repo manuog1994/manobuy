@@ -11,12 +11,12 @@
             <div class="d-flex">
                 <div class="hoverButton">
                     <img class="circleProfile" src="
-                    @if(auth()->user()->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
-                    {{auth()->user()->imgProfile}}"
+                    @if($announcement->user->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
+                    {{$announcement->user->imgProfile}}"
                     @else
-                    /images/{{auth()->user()->imgProfile}}"
+                    /images/{{$announcement->user->imgProfile}}"
                     @endif    
-                    alt="{{auth()->user()->name}}">
+                    alt="{{$announcement->user->name}}">
                 </div>
                 <div class="ms-2">
                     <p class="m-0">{{$announcement->user->name}}</p>
