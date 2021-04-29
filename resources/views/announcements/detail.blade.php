@@ -50,6 +50,7 @@
                 <p class="text-muted">{{__('ui.category')}}:
                     {{__("ui.{$announcement->category->name}")}}</p>
             </div>
+            @auth
             <div class="d-flex">
                 @if($announcement->user_id == auth()->user()->id)
                 <div class="m-auto">
@@ -64,7 +65,7 @@
                 </div>
                 @endif
             </div>
-
+            @endauth
         </div>
     </div>
 </div>
