@@ -12,17 +12,15 @@
                 <div class="hoverButton">
                     <img class="circleProfile" src="
                     @if($announcement->user->imgProfile == 'https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg')
-                    {{$announcement->user->imgProfile}}"
-                    @else
-                    /images/{{$announcement->user->imgProfile}}"
-                    @endif    
-                    alt="{{$announcement->user->name}}">
+                    {{$announcement->user->imgProfile}}" @else /images/{{$announcement->user->imgProfile}}" @endif
+                        alt="{{$announcement->user->name}}">
                 </div>
                 <div class="ms-2">
                     <p class="m-0">{{$announcement->user->name}}</p>
                     <p class="fontsize-12">{{__('ui.created')}}: {{$announcement->created_at->format('d/m/Y')}}</p>
                 </div>
             </div>
+
             <div class="text-end mt-2">
                 <button type="button" class="btn btn-outline-info rounded-pill" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -52,9 +50,25 @@
                 <p class="text-muted">{{__('ui.category')}}:
                     {{__("ui.{$announcement->category->name}")}}</p>
             </div>
+            <div class="d-flex">
+                @if($announcement->user_id == auth()->user()->id)
+                <div class="m-auto">
+                    <a href="{{route('announcements.updateview', Route::current()->id)}}"><i class="bi bi-pencil-square text-muted my-iconsize"></i></a>
+                </div>
+                <div class="m-auto">
+                    <form action="{{route('announcements.delete', $announcement->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn shadow-none"><i class="bi bi-trash-fill text-muted my-iconsize"></i></button>
+                    </form>
+                </div>
+                @endif
+            </div>
+
         </div>
     </div>
 </div>
-@endsection
 @endif
 @endforeach
+
+@endsection

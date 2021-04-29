@@ -26,6 +26,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
+@if (session('modification'))
+    <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
+        {{session('modification')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 @if (session('nuevo'))
     <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
         {{session('nuevo')}}
@@ -46,6 +52,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
+@if (session('deleteAnnouncement'))
+    <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
+        {{session('deleteAnnouncement')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 
 @if (session('reMessage'))
     <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
@@ -58,6 +70,12 @@
 @if (session('errorLogin'))
     <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
         {{session('errorLogin')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('nousercreator'))
+    <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+        {{session('nousercreator')}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif

@@ -10,6 +10,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserVerificationController;
+use App\Http\Controllers\ModifAnnouncementsController;
 use App\Http\Controllers\UploadProfileImageController;
 
 /*
@@ -31,6 +32,10 @@ Route::get('/profile/{userId}', [HomeController::class, 'userProfile'])->middlew
 
 Route::get('/announcements/new',[HomeController::class,'newAnnouncement'])->name('announcements.new');
 Route::post('/announcements/create',[HomeController::class,'create'])->name('announcements.create');
+
+Route::put('/announcements/update/{id}',[ModifAnnouncementsController::class,'updateAnnouncement'])->name('announcements.update');
+Route::get('/announcements/updateview/{id}',[ModifAnnouncementsController::class,'updateAnnouncementView'])->name('announcements.updateview');
+Route::delete('/announcements/delete/{id}',[ModifAnnouncementsController::class,'deleteAnnouncement'])->name('announcements.delete');
 
 Route::post('/announcement/images/upload', [HomeController::class, 'uploadImages'])->name('announcement.images.upload');
 Route::delete('/announcement/images/remove', [HomeController::class, 'removeImages'])->name('announcement.images.remove');
