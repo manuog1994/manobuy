@@ -13,6 +13,9 @@ use Laravel\Socialite\Facades\Socialite;
 class SocialiteController extends Controller
 {
     public function redirectSocialite() {
+        if(auth()->user())
+            return redirect('/');
+
         return Socialite::driver('google')->redirect();
     }
 
@@ -55,6 +58,9 @@ class SocialiteController extends Controller
         }
     }
     public function redirectFacebook() {
+        if(auth()->user())
+            return redirect('/');
+            
         return Socialite::driver('facebook')->redirect();
     }
 

@@ -57,11 +57,11 @@
                     <a href="{{route('announcements.updateview', Route::current()->id)}}"><i class="bi bi-pencil-square text-muted my-iconsize"></i></a>
                 </div>
                 <div class="m-auto">
-                    <form action="{{route('announcements.delete', $announcement->id)}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn shadow-none"><i class="bi bi-trash-fill text-muted my-iconsize"></i></button>
-                    </form>
+                        <form action="{{route('announcements.delete', $announcement->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn shadow-none"><i class="bi bi-trash-fill text-muted my-iconsize"></i></button>
+                        </form>
                 </div>
                 @endif
             </div>

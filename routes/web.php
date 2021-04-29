@@ -36,6 +36,7 @@ Route::post('/announcements/create',[HomeController::class,'create'])->name('ann
 Route::put('/announcements/update/{id}',[ModifAnnouncementsController::class,'updateAnnouncement'])->name('announcements.update');
 Route::get('/announcements/updateview/{id}',[ModifAnnouncementsController::class,'updateAnnouncementView'])->name('announcements.updateview');
 Route::delete('/announcements/delete/{id}',[ModifAnnouncementsController::class,'deleteAnnouncement'])->name('announcements.delete');
+Route::delete('/announcements/{announcementid}/image/{imageid}',[ModifAnnouncementsController::class,'removeImages'])->name('announcements.deleteimages.delete');
 
 Route::post('/announcement/images/upload', [HomeController::class, 'uploadImages'])->name('announcement.images.upload');
 Route::delete('/announcement/images/remove', [HomeController::class, 'removeImages'])->name('announcement.images.remove');

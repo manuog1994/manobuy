@@ -84,7 +84,7 @@ class HomeController extends Controller
         $user = Auth::user();
             
             
-        $category = Announcement::create([
+        $announcement = Announcement::create([
                 'name' => $request['name'],
                 'description' => $request['description'],
                 'price' => $request['price'],
@@ -103,7 +103,7 @@ class HomeController extends Controller
             $i = new AnnouncementImage;
 
             $fileName = basename($image);
-            $newFilePath = "public/announcements/{$category->id}/{$fileName}";
+            $newFilePath = "public/announcements/{$announcement->id}/{$fileName}";
             Storage::move($image, $newFilePath);
 
             dispatch(new ResizeImage(
@@ -123,7 +123,7 @@ class HomeController extends Controller
             ));
 
             $i->file = $newFilePath;
-            $i->announcement_id = $category->id;
+            $i->announcement_id = $announcement->id;
             $i->save();
             Bus::chain([
                 new GoogleVisionSafeSearchImage($i->id),
