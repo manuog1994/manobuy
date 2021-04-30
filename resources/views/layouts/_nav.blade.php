@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg my-nav shadow fixed-top" style="position: sticky; top: 0;">
     <div class="container-fluid">
         @include('layouts.nav._logo')
-        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse text-center ms-2" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     @include('layouts.nav._home')
