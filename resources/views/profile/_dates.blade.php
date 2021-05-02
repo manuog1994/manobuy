@@ -11,8 +11,8 @@
                 alt="{{auth()->user()->name}}">
             </div>
             <div class="mt-2 mb-5">
-                <a class="" data-bs-toggle="modal" data-bs-target="#modalUpload" role="button">Cambiar imagen de perfil <i class="bi bi-pencil-square"></i></a>
-                <p class="text-muted fontsize-12">Se recomienda que la imagen tenga menos de 2MB y este a un tamaño de 150x150 pixels.</p>
+                <a class="" data-bs-toggle="modal" data-bs-target="#modalUpload" role="button">{{ __('ui.changeProfileImage') }} <i class="bi bi-pencil-square"></i></a>
+                <p class="text-muted fontsize-12">{{ __('ui.recomendationImage') }}</p>
             </div>
             @include('auth.update')
             <div class="form-outline mt-3 mb-3 d-md-none">

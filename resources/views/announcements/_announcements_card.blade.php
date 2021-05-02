@@ -1,6 +1,6 @@
 <div class="row">
     @foreach ($announcements->reverse() as $announcement)
-    <div class="col-12 mt-sm-0 d-flex justify-content-center my-cont m-auto" style="max-width: 800px">
+    <div class="col-12 col-md-6 mt-sm-0 d-flex justify-content-center my-cont m-auto" style="max-width: 800px">
         <div class="card mb-3 w-75">
             <div class="row">
                 <div class="col-12 col-md-6 m-auto">
@@ -22,7 +22,7 @@
                         <div class="d-flex justify-content-between m-auto" style="margin-top: 10px">
                             <a class="my-link"
                                 href="{{route('announcements.category', $announcement->category_id)}}">{{__("ui.{$announcement->category->name}")}}</a>
-                            <a class="text-mycard text-end btn btn-outline-info rounded-pill text-info"
+                            <a class="text-mycard text-end text-info"
                                 href="{{route('announcements.detail', $announcement->id)}}">{{__('ui.goAnnouncement')}}</a>
                         </div>
                         <p class="card-text text-center mt-2">
@@ -36,9 +36,4 @@
         </div>
     </div>
     @endforeach
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center mt-5">
-            {{$announcements->links()}}
-        </div>
-    </div>
 </div>

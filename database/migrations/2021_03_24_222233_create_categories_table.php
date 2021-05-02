@@ -21,17 +21,19 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        $categories = [    
-            ['name'=>'Motor','img'=>'/categoriesImages/motor.jpg'],
-            ['name'=>'Moda','img'=>'/categoriesImages/moda.jpg'],
-            ['name'=>'Móviles','img'=>'/categoriesImages/moviles.jpg'],
-            ['name'=>'Informática','img'=>'/categoriesImages/informatica.jpg'],
-            ['name'=>'Videojuegos','img'=>'/categoriesImages/videojuegos.jpg'],
-            ['name'=>'Viviendas','img'=>'/categoriesImages/viviendas.jpg'],
-            ['name'=>'Electrodómesticos','img'=>'/categoriesImages/electrodomesticos.jpg'],
-            ['name'=>'Deportes','img'=>'/categoriesImages/deportes.jpg'],
-            ['name'=>'Mascotas','img'=>'/categoriesImages/mascotas.jpg'],
-            ['name'=>'Servicios','img'=>'/categoriesImages/servicios.jpg']
+        $categories = [
+            
+            ['name'=>'Todos los anuncios','img'=>'/categoriesImages/megafono.png'],
+            ['name'=>'Motor','img'=>'/categoriesImages/motor.png'],
+            ['name'=>'Moda','img'=>'/categoriesImages/moda.png'],
+            ['name'=>'Móviles','img'=>'/categoriesImages/moviles.png'],
+            ['name'=>'Informática','img'=>'/categoriesImages/informatica.png'],
+            ['name'=>'Videojuegos','img'=>'/categoriesImages/videojuegos.png'],
+            ['name'=>'Viviendas','img'=>'/categoriesImages/viviendas.png'],
+            ['name'=>'Electrodómesticos','img'=>'/categoriesImages/electrodomesticos.png'],
+            ['name'=>'Deportes','img'=>'/categoriesImages/deportes.png'],
+            ['name'=>'Mascotas','img'=>'/categoriesImages/mascotas.png'],
+            ['name'=>'Servicios','img'=>'/categoriesImages/servicios.png']
         ];
 
         foreach ($categories as $category) {

@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Crear Anuncio')
+@section('title', __('ui.modifAnnouncement'))
 @section('content')
     <div class="row text-center mt-2">
         <div class="col-12">
-            <h1>Modifica tu anuncio</h1>
+            <h1>{{__('ui.modifAnnouncement')}}</h1>
         </div>
     </div>
 
@@ -20,12 +20,12 @@
     <div class="row mt-5 m-auto">
         <div class="col-12 col-md-9 m-auto mt-2">
             <div class="card bg-white p-2 text-center shadow" style="min-height: 10vh;">
-            <h3>Imagenes del anuncio</h3>
+            <h3>{{ __('ui.announcementImage') }}</h3>
                 @foreach ($announcements as $announcement)
                     <div>
                         @if ($announcement->id == Route::current()->id)
                             @if ($announcement->images->count() == 0)
-                                <p>No imagenes</p>
+                                <p>{{ __('ui.notImages') }}</p>
                             @else
                                 @foreach($announcement->images as $image)
                                     @if ($image->announcement_id == $announcement->id)

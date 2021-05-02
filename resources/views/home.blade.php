@@ -5,8 +5,8 @@
     style="background-image: url('/categoriesImages/hand-shake-on-yellow.jpg'); padding-bottom: 10px;">
     @include('home._all_categories')
 </header>
-<header class="row shadow text-center d-md-none">
-    @include('home._categoriesSlide')
+<header class="row text-center d-md-none">
+    @include('home._allcategories')
 </header>
 @include('home._lastfiveannouncements')
 <div class="row">

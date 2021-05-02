@@ -19,7 +19,6 @@
     @include('layouts._footer')
     @include('cookie-consent::index')
     <script src="{{mix('js/app.js')}}"></script>
-    @yield('script')
 </body>
 
 @include('auth._modals')
@@ -29,6 +28,6 @@
 @include('policities._modalCookies')
 @include('information._contactForm')
 @include('profile._modalUpload')
-
+@include('announcements._fullScreenSlide')
 
 </html>

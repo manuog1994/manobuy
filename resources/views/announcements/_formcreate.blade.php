@@ -8,7 +8,12 @@
             {{-- <option selected>--{{__('ui.categories')}}--</option> --}}
             @foreach ($categories as $mycategory)
             <option value="{{$mycategory->id}}" {{old('mycategory') == $mycategory->id ? 'selected' : ''}}>
-                {{__("ui.{$mycategory->name}")}}</option>
+               @if ($loop->first)
+               {{ __('ui.categories') }}
+               @else
+                {{__("ui.{$mycategory->name}")}}
+                @endif
+            </option>
             @endforeach
         </select>
         @error('option')

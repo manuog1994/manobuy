@@ -16,11 +16,15 @@ class AnnouncementController extends Controller
      public function viewAnnouncement($id)
     {
         $category = Category::findOrFail($id);
+
+        $ads = Announcement::where('is_accepted', true)
+                            ->paginate(10);
+
         $announcements = $category->announcements()
-                                    ->where('is_accepted', true)
-                                    ->paginate(10);
-                                    
-        return view('announcement', compact('category', 'announcements'));
+                                ->where('is_accepted', true)
+                                ->paginate(10);
+        
+        return view('announcement', compact('ads', 'category', 'announcements'));
     }
 
     public function viewDetail($id)

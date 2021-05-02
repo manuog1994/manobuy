@@ -51,5 +51,8 @@ class Announcement extends Model
     {
         return $this->hasMany(AnnouncementImage::class);
     }
-    
+   
+    public function alls(){
+        return $this->hasMany(Announcement::class);
+    }
 }

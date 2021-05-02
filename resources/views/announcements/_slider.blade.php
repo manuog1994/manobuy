@@ -7,7 +7,9 @@
         @else
             @foreach($announcement->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif">
-                    <img src="{{$image->getUrl(800,500)}}" class="d-block w-50 m-auto" alt="{{$announcement->name}}">
+                    <a data-bs-toggle="modal" data-bs-target="#fullScreenCarousel">
+                        <img src="{{$image->getUrl(800,500)}}" class="d-block w-100 m-auto" alt="{{$announcement->name}}">
+                    </a>
                 </div>
             @endforeach
         @endif

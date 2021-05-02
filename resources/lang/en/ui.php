@@ -44,6 +44,7 @@
         "created" => "Created",
         "allAnnouncementCategory" => "All ads from ",
         "Motor" => "Motor",
+        "Todos los anuncios" => "All announcements",
         "Moda" => "Fashion",
         "Móviles" => "Mobile phones",
         "Informática" => "Computing",
@@ -106,5 +107,12 @@
         "modif" => "Update",
         "info" => "Information",
         "myAccount" => "My Account",
+        "affair" => "Subject",
+        "modifAnnouncement" => "Modify your announcement",
+        "announcementImage" => "Announcement images",
+        "notImages" => "No announcement images",
+        "changeProfileImage" => "Change your profile image ",
+        "recomendationImage" => "It is recommended that the image be less than 2MB and 150x150 pixels in size.",
+        "allAnnouncement" => "All announcements",
 
     ];

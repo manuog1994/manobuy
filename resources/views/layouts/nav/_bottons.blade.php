@@ -8,7 +8,7 @@
     @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button"
     @elseif(Auth::user()->email_verified_at == null)
     type="button" href="{{route('verification.notice')}}" 
-    @else type="button" href="{{route('announcements.new')}}" 
+    @else role="button" href="{{route('announcements.new')}}" 
     @endif>{{__('ui.newAnnouncement')}}
     </a>
 </li>

@@ -16,7 +16,7 @@
         <a class="my-link dropdown-item" href="{{route('profile', auth()->user()->id)}}">{{__('ui.myprofile')}}</a>
         @if (Auth::user()->is_revisor)
         <li class="nav-item d-none d-lg-flex">
-            <a class="dropdown-item me-2 m-auto" type="button" class="btn btn-primary"
+            <a class="dropdown-item me-2 m-auto" role="button" class="btn btn-primary"
                 href="{{route('revisor.home')}}">{{__('ui.revisorAds')}}<span
                 class="badge bg-light text-dark">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
             </a>

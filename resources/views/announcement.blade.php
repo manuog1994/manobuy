@@ -1,25 +1,52 @@
 @extends('layouts.app')
 @foreach ($categories as $category)
-@if (Route::current()->id == $category->id)
-@section('title')
-{{__('ui.tab')}} {{$category->name}}
-@endsection
-@endif
-@endforeach
-@section('content')
-<header class="row text-center">
-    @include('announcements._categoriesSlide')
-</header>
-<div class="row">
-    <div class="col-12 text-center mt-5 mb-5">
-        <h1>{{__('ui.allAnnouncementCategory')}}
-            @foreach ($categories as $category)
-            @if (Route::current()->id == $category->id)
-            {{__("ui.{$category->name}")}}
+    @if (Route::current()->id == $category->id)
+        @section('title')
+            @if($loop->first)
+                {{ __('ui.allAnnouncement') }}
+            @else
+                {{__('ui.tab')}} {{$category->name}}
             @endif
-            @endforeach
-            .</h1>
+        @endsection
+    @endif
+@endforeach
+
+@section('content')
+    <header class="row text-center">
+        @include('home._allcategories')
+    </header>
+
+    <div class="row">
+        <div class="col-12 text-center mt-5 mb-5">
+            <h1>
+                @foreach ($categories as $category)
+                    @if (Route::current()->id == $category->id)
+                        @if($loop->first)
+                            {{ __('ui.allAnnouncement') }}
+                        @else
+                            {{__('ui.allAnnouncementCategory')}}
+                            {{__("ui.{$category->name}")}}
+                        @endif
+                    @endif
+                @endforeach
+            </h1>
+        </div>
     </div>
-</div>
-@include('announcements._announcements_card')
+    @if(Route::current()->id == 1)
+        @include('announcements._allcard')
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center mt-5">
+                {{$ads->links()}}
+            </div>
+        </div>
+    @endif
+    
+    @if ($announcements)
+    @include('announcements._announcements_card')
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center mt-5">
+            {{$announcements->links()}}
+        </div>
+    </div>
+    @endif
 @endsection

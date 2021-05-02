@@ -11038,7 +11038,7 @@ if (document.getElementById('splideAds')) {
   new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splideAds', {
     type: 'loop',
     perPage: 3,
-    focus: 'center'
+    pagination: false
   }).mount();
 }
 
@@ -11067,8 +11067,18 @@ if (document.getElementById('splide')) {
 if (document.getElementById('splideCategoryFull')) {
   new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splideCategoryFull', {
     type: 'loop',
-    perPage: 5,
-    focus: 'center'
+    perPage: 4,
+    pagination: false
+  }).mount();
+}
+
+;
+
+if (document.getElementById('splideCategory')) {
+  new (_splidejs_splide__WEBPACK_IMPORTED_MODULE_0___default())('#splideCategory', {
+    type: 'loop',
+    perPage: 4,
+    pagination: false
   }).mount();
 }
 

@@ -9,7 +9,7 @@
             <p class="text-muted text-decoration-underline m-0">{{__('ui.myAccount')}}</p>
             <ul class="p-0" style="font-size: 14px;">
                 <li class="" style="list-style: none">
-                    <a id="dropActivacion" class="text-muted" @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}" @else type="button" href="{{route('announcements.new')}}" @endif>{{__('ui.newAnnouncement')}}
+                    <a id="dropActivacion" class="text-muted" @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}" @else role="button" href="{{route('announcements.new')}}" @endif>{{__('ui.newAnnouncement')}}
                     </a>
                 </li>
                 <li class="" style="list-style: none">

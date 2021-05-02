@@ -43,6 +43,7 @@
         "created" => "Creato",
         "allAnnouncementCategory" => "Tutti gli annunci da ",
         "Motor" => "Motore",
+        "Todos los anuncios" => "Tutti gli annunci",
         "Moda" => "Moda",
         "Móviles" => "Cellulari",
         "Informática" => "Computing",
@@ -104,4 +105,12 @@
         "modif" => "Update",
         "info" => "Informazione",
         "myAccount" => "Il mio conto",
+        "affair" => "Affare",
+        "modifAnnouncement" => "Modifica il tuo annuncio",
+        "announcementImage" => "Immagini dell'annuncio",
+        "notImages" => "Nessuna immagine dell'annuncio",
+        "changeProfileImage" => "Cambia immagine del profilo ",
+        "recomendationImage" => "Si consiglia che l'immagine sia di dimensioni inferiori a 2 MB e di 150 x 150 pixel.",
+        "allAnnouncement" => "Tutti gli annunci",
+
     ];

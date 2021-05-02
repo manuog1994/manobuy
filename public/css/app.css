@@ -5641,6 +5641,11 @@ a.my-logo {
   font-size: 12px;
 }
 
+.estilo-x {
+  font-size: calc(0.5em + 0.5vw);
+  line-height: 1em;
+}
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
