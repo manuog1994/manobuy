@@ -9,13 +9,13 @@
             <p class="text-muted text-decoration-underline m-0">{{__('ui.myAccount')}}</p>
             <ul class="p-0" style="font-size: 14px;">
                 <li class="" style="list-style: none">
-                    <a id="dropActivacion" class="text-muted" @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}" @else role="button" href="{{route('announcements.new')}}" @endif>{{__('ui.newAnnouncement')}}
+                    <a id="dropActivacion" class="text-muted" @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" @elseif(Auth::user()->email_verified_at == null) role="button" href="{{route('verification.notice')}}" @else role="button" href="{{route('announcements.new')}}" @endif>{{__('ui.newAnnouncement')}}
                     </a>
                 </li>
                 <li class="" style="list-style: none">
                     <a id="dropActivacion" class="text-muted" 
                             @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" 
-                            @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}"
+                            @elseif(Auth::user()->email_verified_at == null) role="button" href="{{route('verification.notice')}}"
                             @endif>{{__('ui.login')}}
                     </a>
                 </li>
@@ -64,7 +64,7 @@
     <div class="container p-2 d-flex justify-content-around">
         <a id="dropActivacion" class="d-flex align-self-center" 
         @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button" 
-        @elseif(Auth::user()->email_verified_at == null) type="button" href="{{route('verification.notice')}}"
+        @elseif(Auth::user()->email_verified_at == null) role="button" href="{{route('verification.notice')}}"
         @else
         href="{{route('profile', auth()->user()->id)}}"
         @endif>
@@ -86,14 +86,14 @@
         <a id="dropActivacion" class="d-flex align-self-center" 
         @if (!Auth::user()) href="#modal" data-bs-toggle="modal" role="button"
         @elseif(Auth::user()->email_verified_at == null)
-        type="button" href="{{route('verification.notice')}}" 
-        @else type="button" href="{{route('announcements.new')}}" 
+        role="button" href="{{route('verification.notice')}}" 
+        @else role="button" href="{{route('announcements.new')}}" 
         @endif>
         <i class="bi bi-plus-circle text-white my-iconsize"></i> 
         </a>
         @auth
         @if (Auth::user()->is_revisor)
-        <a class="d-flex align-self-center" type="button"
+        <a class="d-flex align-self-center" role="button"
         href="{{route('revisor.home')}}"><i class="bi bi-binoculars text-white my-iconsize"></i><span
         class="badge bg-light text-dark m-auto ms-1">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
         </a>
