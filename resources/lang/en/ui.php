@@ -114,5 +114,6 @@
         "changeProfileImage" => "Change your profile image ",
         "recomendationImage" => "It is recommended that the image be less than 2MB and 150x150 pixels in size.",
         "allAnnouncement" => "All announcements",
+        "removeProfile" => "Remove Profile",
 
     ];

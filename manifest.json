@@ -1,0 +1,24 @@
+{
+    "short_name": "ManoBuy",
+    "name": "ManoBuy -- Anuncios de segunda mano",
+    "icons": [
+      {
+        "src": "public/categoriesImages/logo150x150.jpeg",
+        "type": "image/jpeg",
+        "sizes": "150x150"
+      },
+      {
+        "src": "public/categoriesImages/logo338x338.jpeg",
+        "type": "image/jpeg",
+        "sizes": "338x338"
+      }
+    ],
+    "start_url": "/index.php",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6",
+
+    "description": "Anuncios de segunda mano"
+
+  }

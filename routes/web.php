@@ -7,6 +7,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\DeleteUserController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserVerificationController;
@@ -73,5 +74,7 @@ Route::get('/auth/callback-facebook', [SocialiteController::class, 'callbackFace
 Route::post('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::post('/image-profile/{id}', [UploadProfileImageController::class, 'uploadImage'])->name('upload.image');
+
+Route::delete('/user-delete/{id}', [DeleteUserController::class, 'deleteUser'])->name('user.delete');
 
 

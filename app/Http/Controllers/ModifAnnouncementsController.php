@@ -126,7 +126,7 @@ class ModifAnnouncementsController extends Controller
             return back();
 
         if($user->id != $announcement->user_id)
-            return back;
+            return back();
 
         $announcement->delete();
             

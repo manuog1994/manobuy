@@ -3,7 +3,7 @@
     <span>Mano</span> Buy</a>
 <form class="navbar-brand d-lg-none d-print-flex w-75 m-auto" action="{{ route('search') }}" method="GET">
     <input type="text" class="form-control" placeholder="{{__('ui.search')}}" aria-label="Search" name="q" />
-    <button class="btn shadow-none" type="submit" data-mdb-ripple-color="dark">
+    <button class="btn p-0 ms-2 shadow-none" type="submit" data-mdb-ripple-color="dark">
         <i class="bi bi-search fs-6 p-0"></i>
     </button>
 </form>

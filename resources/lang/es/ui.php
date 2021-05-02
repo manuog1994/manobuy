@@ -114,4 +114,5 @@
         "changeProfileImage" => "Cambiar imagen de perfil ",
         "recomendationImage" => "Se recomienda que la imagen tenga menos de 2MB y este a un tamaño de 150x150 pixels.",
         "allAnnouncement" => "Todos los anuncios",
+        "removeProfile" => "Eliminar Perfil",
     ];

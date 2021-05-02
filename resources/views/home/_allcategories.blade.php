@@ -9,7 +9,7 @@
                 <li class="splide__slide ms-3 me-3">
                     <div class="div-img text-center">
                         <a href="{{route('announcements.category', $category->id)}}">
-                            <img src="{{$category->img}}" class="card img shadow-none w-50 bg-transparent" alt="{{$category->name}}"></a>
+                            <img src="{{$category->img}}" class="card img shadow-none w-25 bg-transparent" alt="{{$category->name}}"></a>
                         <p class="estilo-x mt-1">{{__("ui.{$category->name}")}}</p>
                     </div>
                 </li>
