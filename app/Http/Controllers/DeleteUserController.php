@@ -42,6 +42,7 @@ class DeleteUserController extends Controller
         }
                 
         if(Auth::user())
+            $user = Auth::user();
             $user->delete();
 
         return redirect('/')->with('deleteUser', 'Su perfil ha sido eliminado');
