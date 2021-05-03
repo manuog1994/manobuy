@@ -107,13 +107,11 @@ class ModifAnnouncementsController extends Controller
         
         $announcement = Announcement::findOrFail($id);
         //remove images
-        $images = AnnouncementImage::all();
 
-        foreach ($images as $image) {
+        foreach ($announcement->images as $image) {
             $fileName = basename($image);
-            if($image->id == $announcement->id)
-                File::delete(storage_path("app/public/announcements/$announcement->id/$fileName"));
-                $image->delete();
+            File::delete(storage_path("app/public/announcements/$announcement->id/$fileName"));
+            $image->delete();
 
             # code...
         }
