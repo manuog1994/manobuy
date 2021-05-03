@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', 'manobuy.manuelgaliano.site'),
+    'domain' => env('SESSION_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
