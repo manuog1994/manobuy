@@ -14,7 +14,7 @@
                 <li class="splide__slide">
                     <div class="div-img">
                         <a href="{{route('announcements.category', $category->id)}}">
-                            <img src="{{$category->img}}" class="card img shadow-none bg-transparent" style="width: 100px;" alt="{{$category->name}}"></a>
+                            <img src="{{$category->img}}" class="card img shadow-none bg-transparent w-25" alt="{{$category->name}}"></a>
                         <p class="mt-1 estilo-x">{{__("ui.{$category->name}")}}</p>
                     </div>
                 </li>

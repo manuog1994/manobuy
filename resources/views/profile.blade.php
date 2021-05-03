@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-{{__('ui.myprofile')}} -- {{auth()->user()->name}}
+{{__('ui.myprofile')}} - ManoBuy
 @endsection
 @section('content')
 

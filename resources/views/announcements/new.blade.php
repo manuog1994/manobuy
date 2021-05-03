@@ -1,6 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Update')
-@section('content')
+@section('title')
+ {{ __('ui.newAnnouncement') }} - ManoBuy
+@endsection
+ @section('content')
 <div class="row text-center mt-2">
     <div class="col-12">
         <h1>{{__('ui.newAnnouncement')}}</h1>

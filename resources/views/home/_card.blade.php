@@ -1,5 +1,5 @@
 <a class="text-mycard" href="{{route('announcements.detail', $announcement->id)}}">
-    <div class="card  my-cardLink w-75 m-auto shadow" style=" max-height: 98%;">
+    <div class="card my-cardLink w-75 m-auto shadow" style=" max-height: 98%;">
         <div class="col-12">
             @if ($announcement->images->count() == 0)
             <img src="{{$announcement->img}}300" width="100%;" alt="{{$announcement->name}}">

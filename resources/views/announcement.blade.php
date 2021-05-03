@@ -3,7 +3,7 @@
     @if (Route::current()->id == $category->id)
         @section('title')
             @if($loop->first)
-                {{ __('ui.allAnnouncement') }}
+                {{ __('ui.allAnnouncements') }}
             @else
                 {{__('ui.tab')}} {{$category->name}}
             @endif

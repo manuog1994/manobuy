@@ -1,7 +1,7 @@
 <?php 
 
     return [
-        "titlepage" => "ManoBuy -- Anuncios de segundamano, vende y compra.",
+        "titlepage" => "ManoBuy - Anuncios de segundamano, vende y compra.",
         "welcome" => "Bienvenidos a ",
         "answer1" => "¿Qué estas buscando?",
         "introduction" => "Búscalo dentro de las categorías, ahí encontras el producto que desees y podrás ver los anuncios.",
@@ -114,5 +114,6 @@
         "changeProfileImage" => "Cambiar imagen de perfil ",
         "recomendationImage" => "Se recomienda que la imagen tenga menos de 2MB y este a un tamaño de 150x150 pixels.",
         "allAnnouncement" => "Todos los anuncios",
+        "allAnnouncements" => "Todos los anuncios - ManoBuy",
         "removeProfile" => "Eliminar Perfil",
     ];

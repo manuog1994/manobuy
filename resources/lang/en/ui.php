@@ -1,7 +1,7 @@
 <?php 
 
     return [
-        "titlepage" => "ManoBuy -- Secondhand ads, sell and buy.",
+        "titlepage" => "ManoBuy - Secondhand ads, sell and buy.",
         "welcome" => "Welcome to ",
         "answer1" => "What're you looking for?",
         "introduction" => "Look for it within the categories, there you will find the product you want and you will be able to see the ads.",
@@ -114,6 +114,7 @@
         "changeProfileImage" => "Change your profile image ",
         "recomendationImage" => "It is recommended that the image be less than 2MB and 150x150 pixels in size.",
         "allAnnouncement" => "All announcements",
+        "allAnnouncements" => "All announcements - ManoBuy",
         "removeProfile" => "Remove Profile",
 
     ];
